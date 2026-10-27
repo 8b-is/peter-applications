@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Péter József Lódri — Engineering Portfolio for teamLab (チームラボ)</title>
+<style>
+  :root {
+    color-scheme: dark;
+    --ink: #f2f4ff;
+    --dim: #c2c6e6;
+    --faint: #8f95bd;
+    --bg: #070a12;
+    --surface: #101524;
+    --line: rgba(255,255,255,0.14);
+    --accent: #62e6c9;
+    --sec: #b48bff;
+    --mono: ui-monospace, "SF Mono", Menlo, monospace;
+    --sans: "Inter", system-ui, -apple-system, "Hiragino Sans", sans-serif;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: var(--sans); font-size: 0.92rem; line-height: 1.6; color: var(--ink); background: var(--bg); -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  a { color: var(--sec); text-decoration: none; }
+  .page { max-width: 48rem; margin: 0 auto; padding: 0 clamp(16px, 4vw, 36px); }
+  .band { padding: 28px 0 22px; border-bottom: 1px solid var(--line); background: linear-gradient(135deg, rgba(255,255,255,0.05), transparent); }
+  .kicker { font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--accent); }
+  .name { font-size: 2.3rem; font-weight: 800; margin-top: 6px; color: #fff; }
+  .role { font-size: 1.05rem; color: var(--ink); margin-top: 6px; }
+  .lede { font-family: var(--mono); font-size: 0.8rem; color: var(--dim); margin-top: 8px; }
+  .contacts { display: flex; flex-wrap: wrap; gap: 8px 14px; margin-top: 12px; font-family: var(--mono); font-size: 0.75rem; color: var(--dim); }
+  section { padding-block: 18px; break-inside: avoid; }
+  .sec-head { display: flex; align-items: baseline; gap: 12px; margin-bottom: 12px; border-bottom: 1px solid var(--line); padding-bottom: 5px; }
+  .sec-head .n { font-family: var(--mono); font-size: 0.74rem; color: var(--accent); }
+  .sec-head h2 { font-size: 1.25rem; font-weight: 700; color: #fff; }
+  .works { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .work { padding: 14px 16px; border-radius: 10px; background: var(--surface); border: 1px solid var(--line); display: block; color: inherit; break-inside: avoid; }
+  .work .tag { font-family: var(--mono); font-size: 0.66rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); }
+  .work h3 { font-size: 1rem; margin: 4px 0 6px; color: #fff; }
+  .work p { font-size: 0.82rem; color: var(--dim); }
+  .work .url { font-family: var(--mono); font-size: 0.71rem; color: var(--sec); margin-top: 8px; }
+  .why { padding: 16px 18px; border-radius: 10px; background: var(--surface); border: 1px solid var(--line); font-size: 0.88rem; line-height: 1.75; }
+  footer { margin-top: 14px; padding: 14px 0 24px; border-top: 1px solid var(--line); font-family: var(--mono); font-size: 0.72rem; color: var(--faint); line-height: 1.8; }
+  @page { size: A4; margin: 10mm 11mm; }
+</style>
+</head>
+<body>
+<div class="band">
+  <div class="page">
+    <p class="kicker">ENGINEERING &amp; ARCHITECTURE PORTFOLIO · teamLab (チームラボ)</p>
+    <h1 class="name">Péter József Lódri</h1>
+    <p class="role">インタラクティブエンジニア（Unity / 3D） · Interactive Engineer &amp; Catalyst — I make sound → seen, and structure → felt — real-time graphics, vector synthesis, and the systems underneath.</p>
+    <p class="lede">Printable mirror of <a href="https://teamlab.vaked.dev">https://teamlab.vaked.dev</a> · LinkedIn: <a href="https://www.linkedin.com/in/peter-lodri/">linkedin.com/in/peter-lodri</a></p>
+    <nav class="contacts">
+      <a href="mailto:peter.lodri@gmail.com">peter.lodri@gmail.com</a> ·
+      <a href="https://www.linkedin.com/in/peter-lodri/">LinkedIn</a> ·
+      <a href="https://github.com/peterlodri-sec">github.com/peterlodri-sec</a> ·
+      <a href="https://github.com/8b-is">github.com/8b-is</a> ·
+      <a href="https://teamlab.vaked.dev">teamlab.vaked.dev</a>
+    </nav>
+  </div>
+</div>
+
+<div class="page">
+  <main>
+    <section id="works">
+      <div class="sec-head"><span class="n">01</span><h2>Selected Architecture &amp; Engineering Works for teamLab (チームラボ)</h2></div>
+      <div class="works">
+        
+        <a class="work" href="https://oscilloscope.vaked.dev">
+          <span class="tag">real-time · oscilloscope</span>
+          <h3>lissajoverse</h3>
+          <p>Single-file retro oscilloscope reborn: Lissajous weave, NOT-NAND ternary grammar, and organic phosphor feedback loop where stereo signal is the drawing.</p>
+          <div class="url">oscilloscope.vaked.dev · lissaj.vaked.dev</div>
+        </a>
+
+        <a class="work" href="https://viz.vaked.dev">
+          <span class="tag">WebGL2 · Web Audio · zero deps</span>
+          <h3>enthea — the visual synthesizer</h3>
+          <p>Real-time visual synthesizer computing the geometry of visionary states from cortical instability math in one zero-dependency WebGL2 + Web Audio HTML file.</p>
+          <div class="url">viz.vaked.dev</div>
+        </a>
+
+        <a class="work" href="https://pocoo.vaked.dev/water/">
+          <span class="tag">Three.js · Web Audio · spatial DSP</span>
+          <h3>Water-Fall Disc</h3>
+          <p>A 20-inch Nazar drum recreated as a granular bead swarm with Poisson micro-shots — pure procedural physical modeling with zero samples.</p>
+          <div class="url">pocoo.vaked.dev/water</div>
+        </a>
+
+        <a class="work" href="https://github.com/simplifaisoul/osiris">
+          <span class="tag">OSS Architect · 3D Spatial Intelligence</span>
+          <h3>Osiris &amp; Osaurus (OSS Architect)</h3>
+          <p>Core Architect on Osiris (simplifaisoul/osiris — real-time 3D/spatial global intelligence dashboard) &amp; Osaurus (osaurus-ai/osaurus — native Swift macOS AI agent harness), plus Headroom PR #1418.</p>
+          <div class="url">github.com/simplifaisoul/osiris · osaurus-ai/osaurus</div>
+        </a>
+
+        <a class="work" href="https://github.com/peterlodri-sec">
+          <span class="tag">systems · C / Rust · BitNet b1.58</span>
+          <h3>project-zero &amp; pureQTern</h3>
+          <p>Dependency-free C inference engine for 1.58-bit ternary models + pure ternary codec in C and Rust verified to the bit by golden SHA-256 hash.</p>
+          <div class="url">github.com/peterlodri-sec · 8b-is</div>
+        </a>
+
+        <a class="work" href="https://zeno.vaked.dev">
+          <span class="tag">sovereign neo-bank · Web Audio</span>
+          <h3>ZENO (銭 · 禅 · 善)</h3>
+          <p>Japanese proof-of-contribution sovereign neo-bank with a double-entry Kintsugi SHA-256 ledger and real-time procedural Web Audio garden soundscape.</p>
+          <div class="url">zeno.vaked.dev</div>
+        </a>
+      </div>
+    </section>
+
+    <section id="why">
+      <div class="sec-head"><span class="n">02</span><h2>Why teamLab (チームラボ) (Chiyoda-ku, Tokyo (千代田区・小川町))</h2></div>
+      <div class="why">
+        <p>teamLab's line — &quot;transcend these boundaries … everything exists in a long, fragile yet miraculous, borderless continuity&quot; — is not a slogan to me; it is the exact shape of what I build. Having walked through and experienced both teamLab Borderless (Azabudai Hills) and teamLab Planets (Toyosu) in Tokyo, and visiting teamLab Botanical Garden Osaka, the physical sensation of boundaryless space reacting in real time to human presence made it unmistakable: this is the collective where my work belongs.</p>
+        <p style="margin-top:10px" lang="ja">東京の「teamLab Borderless（麻布台ヒルズ）」および「teamLab Planets（豊洲）」の展示を実際に体験し、身体と作品、自己と他者の境界が溶け合うリアルタイムの空間変容に圧倒されました。私が探求してきたオシロスコープ・ベクター合成やWebGL2シェーダー、三値数理システム（{−1, 0, +1}）は、まさに「知覚と信号のボーダレスな連続性」そのものです。アーティストとエンジニアの境界を結ぶインタラクティブエンジニア（Unity / 3D）として、東京の地で世界を魅了する次なる体験を共に創り出したいと強く志望しています。</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div>Péter József Lódri · Live Interactive Site: <a href="https://teamlab.vaked.dev">https://teamlab.vaked.dev</a> · Master Hub: <a href="https://apply.vaked.dev">https://apply.vaked.dev</a></div>
+    <div>fine touch from within · peter + 8b.is &lt;3 · {−1, 0, +1} · om mani padme hum</div>
+  </footer>
+</div>
+</body>
+</html>

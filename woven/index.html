@@ -1,0 +1,541 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Péter József Lódri — Senior Systems Software Engineer — Rust, Simulation &amp; Accelerated ML Platform (Arene SDV) · Woven by Toyota (ウーブン・バイ・トヨタ)</title>
+<meta name="description" content="Interactive CV, tailored résumé, portfolio, and LinkedIn outreach kit of Péter József Lódri for Woven by Toyota (ウーブン・バイ・トヨタ) (Senior Systems Software Engineer — Rust, Simulation &amp; Accelerated ML Platform (Arene SDV)).">
+<meta name="theme-color" content="#04060a">
+<meta property="og:title" content="Péter József Lódri — Woven by Toyota (ウーブン・バイ・トヨタ) Application & Interactive CV">
+<meta property="og:description" content="Building the software-defined vehicle operating system and real-time 3D digital twin fabric.">
+<style>
+  :root{
+    --bg:#04060a;
+    --accent:#ff3366;
+    --sec:#62e6c9;
+    --ter:#b48bff;
+    --ink:#eef0ff;
+    --dim:rgba(215,212,240,.86);
+    --line:rgba(255,255,255,.12);
+    --mono:ui-monospace,'SF Mono','JetBrains Mono',Menlo,monospace;
+    --sans:'Inter',system-ui,-apple-system,'Hiragino Sans','Helvetica Neue',sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.6;overflow-x:hidden}
+  #fx{position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;display:block;pointer-events:none}
+  .grain{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.38;
+    background:
+      radial-gradient(100% 60% at 50% -10%, color-mix(in srgb, var(--accent) 18%, transparent), transparent 55%),
+      radial-gradient(90% 70% at 100% 40%, color-mix(in srgb, var(--sec) 14%, transparent), transparent 55%),
+      radial-gradient(90% 90% at 50% 120%, color-mix(in srgb, var(--ter) 14%, transparent), transparent 60%)}
+  .constellation-bar{
+    position:sticky;top:0;z-index:40;display:flex;align-items:center;gap:8px;flex-wrap:wrap;
+    padding:10px clamp(16px,4vw,40px);background:rgba(4,6,10,.86);backdrop-filter:blur(12px);
+    border-bottom:1px solid var(--line);font-family:var(--mono);font-size:11px;
+  }
+  .cb-label{color:var(--accent);font-weight:700;letter-spacing:.12em;margin-right:4px}
+  .cb-link{color:var(--dim);text-decoration:none;padding:4px 9px;border-radius:6px;border:1px solid transparent;transition:all .18s}
+  .cb-link:hover{color:#fff;border-color:var(--line);background:rgba(255,255,255,.05)}
+  .cb-link.active{color:#04060a;background:var(--accent);font-weight:700}
+
+  .wrap{position:relative;z-index:1;max-width:980px;margin:0 auto;padding:0 clamp(18px,5vw,48px)}
+  .hero{min-height:84vh;display:flex;flex-direction:column;justify-content:center;gap:18px;padding-block:64px}
+  .kicker{
+    font-family:var(--mono);font-size:11px;letter-spacing:.26em;text-transform:uppercase;
+    color:var(--accent);
+  }
+  h1{font-size:clamp(38px,8vw,78px);line-height:.98;letter-spacing:-.02em;font-weight:800}
+  h1 .accent{
+    background:linear-gradient(135deg, var(--accent), var(--sec), var(--ter));
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+  }
+  .target-pill{
+    display:inline-flex;align-items:center;gap:10px;flex-wrap:wrap;
+    font-family:var(--mono);font-size:12px;color:#fff;
+    background:rgba(255,255,255,.05);border:1px solid var(--line);
+    padding:8px 14px;border-radius:8px;width:fit-content;
+  }
+  .target-pill strong{color:var(--accent)}
+  .role{font-size:clamp(16px,2.6vw,22px);color:rgba(235,230,255,.95);max-width:46ch}
+  .lede{font-family:var(--mono);font-size:13px;color:var(--dim);max-width:66ch;line-height:1.85}
+  .cta{display:flex;gap:10px;flex-wrap:wrap;margin-top:6px}
+  .btn{
+    font-family:var(--mono);text-decoration:none;color:var(--ink);border:1px solid var(--line);border-radius:6px;
+    padding:11px 16px;font-size:11px;letter-spacing:.12em;text-transform:uppercase;transition:all .2s;
+    background:rgba(255,255,255,.03);cursor:pointer;
+  }
+  .btn:hover{border-color:var(--accent);color:#fff;background:rgba(255,255,255,.08)}
+  .btn.p{border-color:var(--accent);background:color-mix(in srgb, var(--accent) 16%, transparent);color:#fff;font-weight:700}
+  .btn.p:hover{background:color-mix(in srgb, var(--accent) 28%, transparent);box-shadow:0 0 18px color-mix(in srgb, var(--accent) 40%, transparent)}
+  .btn.li{border-color:#0a66c2;background:rgba(10,102,194,.18);color:#cfe8ff}
+  .btn.li:hover{background:rgba(10,102,194,.32);border-color:#378fe9}
+
+  section{padding-block:clamp(42px,7vw,80px)}
+  .sec-h{display:flex;align-items:baseline;gap:14px;margin-bottom:24px;flex-wrap:wrap}
+  .sec-h h2{font-size:clamp(22px,3.6vw,32px);letter-spacing:-.01em;font-weight:700}
+  .sec-h .n{font-family:var(--mono);font-size:12px;color:var(--accent);letter-spacing:.2em}
+  .works{display:grid;gap:16px;grid-template-columns:1fr}
+  @media(min-width:700px){.works{grid-template-columns:1fr 1fr}}
+  .work,.li-card{
+    position:relative;border:1px solid var(--line);border-radius:12px;padding:20px 22px;
+    background:rgba(10,12,22,.68);text-decoration:none;color:inherit;
+    transition:transform .22s,border-color .22s,background .22s;overflow:hidden;
+    backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);display:block;
+  }
+  .work:hover,.li-card:hover{transform:translateY(-3px);border-color:var(--accent);background:rgba(14,18,32,.86)}
+  .work .tag,.li-badge{font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent)}
+  .work h3,.li-card h3{font-size:18px;margin:6px 0 6px;font-weight:700}
+  .li-title{font-family:var(--mono);font-size:11.5px;color:var(--sec);margin-bottom:8px}
+  .work p,.li-card p{font-size:13.5px;color:rgba(228,224,255,.88);line-height:1.65}
+  .work .url{font-family:var(--mono);font-size:11px;color:var(--dim);margin-top:10px}
+
+  .li-grid{display:grid;gap:14px;grid-template-columns:1fr}
+  @media(min-width:700px){.li-grid{grid-template-columns:repeat(3,1fr)}}
+  .li-bar{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:18px}
+  .copy-box{
+    border:1px solid var(--line);border-radius:12px;padding:18px 20px;
+    background:rgba(10,12,22,.74);margin-top:16px;
+  }
+  .copy-head{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:10px}
+  .copy-head span{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--sec)}
+  .copy-pre{
+    font-family:var(--mono);font-size:12.5px;color:#e8ecff;background:rgba(4,6,10,.8);
+    border:1px solid var(--line);border-radius:8px;padding:14px;white-space:pre-wrap;line-height:1.65;
+  }
+
+  .skills{display:grid;gap:12px;grid-template-columns:1fr}
+  @media(min-width:700px){.skills{grid-template-columns:1fr 1fr}}
+  .skill{border-left:2px solid var(--accent);padding:6px 0 6px 16px;background:rgba(10,10,20,.5);border-radius:0 8px 8px 0}
+  .skill b{font-family:var(--mono);font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:var(--sec);display:block;margin-bottom:4px}
+  .skill p{font-size:13.5px;color:rgba(228,224,255,.88);line-height:1.65}
+  .why{padding:26px;border:1px solid var(--line);border-radius:12px;background:rgba(10,12,22,.66);font-size:15px;line-height:1.85}
+  .why p+p{margin-top:14px}
+  footer{padding-block:54px 72px;border-top:1px solid var(--line);font-family:var(--mono);font-size:12px;color:var(--dim);line-height:2}
+  footer a{color:var(--accent);text-decoration:none}
+  footer a:hover{text-decoration:underline;color:var(--sec)}
+
+  #sound-toggle{
+    position:fixed;right:18px;bottom:18px;z-index:50;width:46px;height:46px;border-radius:50%;
+    border:1px solid rgba(255,255,255,.2);background:rgba(4,6,10,.78);backdrop-filter:blur(8px);
+    color:var(--accent);font-family:var(--mono);font-size:15px;cursor:pointer;
+    display:flex;align-items:center;justify-content:center;
+  }
+  #sound-toggle.on{border-color:var(--sec);color:var(--sec);box-shadow:0 0 20px color-mix(in srgb, var(--sec) 45%, transparent)}
+
+  @media print{
+    @page{size:A4;margin:12mm}
+    #fx,.grain,.cta,.constellation-bar,#sound-toggle{display:none!important}
+    .hero{min-height:auto;padding-block:18px}
+    section{padding-block:18px}
+    .work,.skill,.why,.li-card,.copy-box{break-inside:avoid}
+  }
+</style>
+</head>
+<body>
+<nav class="constellation-bar" aria-label="Application Subdomain Network">
+    <span class="cb-label">SOTA CAREER NETWORK:</span>
+    <a href="https://apply.vaked.dev" class="cb-link">00 Hub (apply.vaked.dev)</a><a href="https://teamlab.vaked.dev" class="cb-link">01 teamLab</a><a href="https://sakana.vaked.dev" class="cb-link">02 Sakana AI</a><a href="https://pfn.vaked.dev" class="cb-link">03 Preferred Networks</a><a href="https://tier4.vaked.dev" class="cb-link">04 TIER IV</a><a href="https://woven.vaked.dev" class="cb-link active">05 Woven by Toyota</a><a href="https://taiko.vaked.dev" class="cb-link">06 Taiko Labs</a>
+  </nav>
+<canvas id="fx" aria-hidden="true"></canvas>
+<div class="grain"></div>
+<button id="sound-toggle" aria-label="toggle ambient synth" title="Toggle procedural Web Audio synth">♪</button>
+
+<div class="wrap">
+  <header class="hero">
+    <div class="kicker">Arene SDV Operating System · 3D Digital Twin Simulation · Rust &amp; ML Platform · Nihonbashi Tokyo</div>
+    <h1>Péter L<span class="accent">ó</span>dri</h1>
+    <div class="target-pill">
+      <span>TARGET: <strong>Woven by Toyota (ウーブン・バイ・トヨタ)</strong></span>
+      <span>·</span>
+      <span>Nihonbashi, Chuo-ku, Tokyo (日本橋室町三井タワー)</span>
+      <span>·</span>
+      <span>¥12,000,000 – ¥22,000,000+ JPY</span>
+    </div>
+    <p class="role">Building the software-defined vehicle operating system and real-time 3D digital twin fabric.</p>
+    <p class="lede">Interactive Woven City / Arene SDV digital twin mesh with deterministic vehicle-to-grid telemetry — drawn live in your browser. Prepared for Woven by Toyota in Nihonbashi.</p>
+    <nav class="cta" aria-label="Application Deliverables & Links">
+      <a class="btn p" href="/resume.pdf">⬇ Resume PDF (履歴書)</a>
+      <a class="btn p" href="/portfolio.pdf">⬇ Portfolio PDF</a>
+      <a class="btn p" href="/application.pdf">⬇ Full Application PDF</a>
+      <a class="btn" href="/resume">Résumé HTML</a>
+      <a class="btn" href="/portfolio">Portfolio HTML</a>
+      <a class="btn" href="/application">Application &amp; Cover Letter</a>
+      <a class="btn" href="/eli5">ELI5 3-Min Guide</a>
+      <a class="btn li" href="#linkedin">LinkedIn &amp; Contacts ▾</a>
+      <a class="btn li" href="https://www.linkedin.com/in/peter-lodri/" target="_blank" rel="noopener noreferrer">My LinkedIn ↗</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="works">
+      <div class="sec-h"><span class="n">01</span><h2>Selected Work &amp; Open-Source Architecture</h2></div>
+      <div class="works">
+        
+        <a class="work reveal" href="https://github.com/simplifaisoul/osiris" target="_blank" rel="noopener noreferrer">
+          <span class="tag">OSS Architect · Real-Time 3D Digital Twin</span>
+          <h3>Osiris (simplifaisoul/osiris)</h3>
+          <p>Core Architect on Osiris — real-time 3D geospatial digital twin and live multi-stream telemetry visualization platform.</p>
+          <div class="url">github.com/simplifaisoul/osiris ↗</div>
+        </a>
+
+        <a class="work reveal" href="https://age.vaked.dev" target="_blank" rel="noopener noreferrer">
+          <span class="tag">Deterministic Simulation Engine · Zero Deps</span>
+          <h3>Age of Gaia &amp; Water-Fall Disc</h3>
+          <p>Self-contained deterministic game-loop and physical particle simulation engines with zero external dependencies.</p>
+          <div class="url">age.vaked.dev · pocoo.vaked.dev/water ↗</div>
+        </a>
+
+        <a class="work reveal" href="https://github.com/8b-is" target="_blank" rel="noopener noreferrer">
+          <span class="tag">Rust / C · Bit-Exact Edge ML Codec</span>
+          <h3>pureQTern &amp; MLX-QUANT</h3>
+          <p>Bit-exact C and Rust 1.58-bit ternary codec + custom GPU kernels delivering 12.80× model compression for in-vehicle ECUs.</p>
+          <div class="url">github.com/8b-is · pureQTern &amp; MLX-QUANT ↗</div>
+        </a>
+
+        <a class="work reveal" href="https://github.com/osaurus-ai/osaurus" target="_blank" rel="noopener noreferrer">
+          <span class="tag">OSS Architect · Cryptographic Agent Harness</span>
+          <h3>Osaurus &amp; Headroom (PR #1418)</h3>
+          <p>Core Architect on Osaurus (native Swift agent runtime with cryptographic identity) and contributor to Headroom kompress domain routing.</p>
+          <div class="url">github.com/osaurus-ai/osaurus ↗</div>
+        </a>
+
+        <a class="work reveal" href="https://github.com/peterlodri-sec" target="_blank" rel="noopener noreferrer">
+          <span class="tag">High-Concurrency Telemetry · 110k+ Users</span>
+          <h3>Distributed Streaming &amp; Telemetry</h3>
+          <p>Led backend streaming for 110k+ concurrent users at DailyWire and reduced enterprise latency by 50–70% at ASAPP via Go/Kafka/K8s.</p>
+          <div class="url">Go · Rust · Kafka · Kubernetes ↗</div>
+        </a>
+
+        <a class="work reveal" href="https://zeno.vaked.dev" target="_blank" rel="noopener noreferrer">
+          <span class="tag">Hash-Chained Verification · Sovereign Ledger</span>
+          <h3>ZENO (銭 · 禅 · 善)</h3>
+          <p>Double-entry SHA-256 hash-chained ledger ensuring tamper-evident auditability for every state transition.</p>
+          <div class="url">zeno.vaked.dev ↗</div>
+        </a>
+      </div>
+    </section>
+
+    <section id="linkedin">
+      <div class="sec-h"><span class="n">02</span><h2>Direct Portal, LinkedIn Contacts &amp; 1-Click Outreach</h2></div>
+      <div class="li-bar">
+        <a class="btn p" href="https://woven.toyota/en/careers" target="_blank" rel="noopener noreferrer">Official Careers Portal (Woven by Toyota) ↗</a>
+        <a class="btn li" href="https://www.linkedin.com/company/wovenbytoyota/" target="_blank" rel="noopener noreferrer">LinkedIn Company Page ↗</a>
+        <a class="btn li" href="https://www.linkedin.com/company/wovenbytoyota/jobs/" target="_blank" rel="noopener noreferrer">LinkedIn Jobs ↗</a>
+        <a class="btn li" href="https://www.linkedin.com/company/wovenbytoyota/people/" target="_blank" rel="noopener noreferrer">LinkedIn People Directory ↗</a>
+        <a class="btn li" href="https://www.linkedin.com/search/results/people/?keywords=%22Woven%20by%20Toyota%22%20%28Recruiter%20OR%20Talent%20OR%20Arene%20OR%20Simulation%20OR%20Rust%29" target="_blank" rel="noopener noreferrer">Find Recruiters &amp; Engineers on LinkedIn ↗</a>
+        <a class="btn" href="https://www.linkedin.com/in/peter-lodri/" target="_blank" rel="noopener noreferrer">Péter Lódri LinkedIn Profile ↗</a>
+        <a class="btn" href="mailto:careers@woven.toyota?subject=Senior%20Systems%20Software%20Engineer%20%E2%80%94%20Rust%2C%20Simulation%20%26%20Accelerated%20ML%20Platform%20(Arene%20SDV)%20%E2%80%94%20P%C3%A9ter%20J%C3%B3zsef%20L%C3%B3dri%20(woven.vaked.dev)">careers@woven.toyota ✉</a>
+      </div>
+
+      <div class="li-grid">
+        
+        <a class="li-card reveal" href="https://www.linkedin.com/search/results/people/?keywords=Hajime%20Kumabe%20Woven%20by%20Toyota" target="_blank" rel="noopener noreferrer">
+          <div class="li-badge">LinkedIn Contact ↗</div>
+          <h3>Hajime Kumabe (隈部肇)</h3>
+          <div class="li-title">Chief Executive Officer (CEO), Woven by Toyota</div>
+          <p>CEO leading Arene OS commercialization and Woven City Phase 1 launch.</p>
+        </a>
+
+        <a class="li-card reveal" href="https://www.linkedin.com/search/results/people/?keywords=John%20Absmeier%20Woven%20by%20Toyota" target="_blank" rel="noopener noreferrer">
+          <div class="li-badge">LinkedIn Contact ↗</div>
+          <h3>John Absmeier</h3>
+          <div class="li-title">Chief Technology Officer (CTO), Woven by Toyota</div>
+          <p>CTO overseeing Arene SDV software platform, simulation, and automated driving.</p>
+        </a>
+
+        <a class="li-card reveal" href="https://www.linkedin.com/search/results/people/?keywords=%22Woven%20by%20Toyota%22%20Recruiter%20OR%20Talent%20Acquisition" target="_blank" rel="noopener noreferrer">
+          <div class="li-badge">LinkedIn Contact ↗</div>
+          <h3>Woven by Toyota Talent Acquisition (Arene &amp; Enterprise AI)</h3>
+          <div class="li-title">Technical Recruiting · Nihonbashi, Tokyo</div>
+          <p>English-first global talent acquisition team at Nihonbashi Muromachi Mitsui Tower.</p>
+        </a>
+      </div>
+
+      <div class="copy-box">
+        <div class="copy-head">
+          <span>1-Click LinkedIn Connection Note (&lt; 300 chars)</span>
+          <button class="btn p" onclick="copyText('conn-note', this)">Copy Connection Note</button>
+        </div>
+        <pre class="copy-pre" id="conn-note">Hi! I built an interactive Arene SDV / Woven City 3D digital-twin portfolio specifically for Woven by Toyota in Nihonbashi: https://woven.vaked.dev — uniting Rust/C systems, real-time 3D simulation &amp; edge ML compression. Would love to connect! — Péter Lódri</pre>
+      </div>
+
+      <div class="copy-box">
+        <div class="copy-head">
+          <span>1-Click LinkedIn InMail / Direct Email Message</span>
+          <button class="btn p" onclick="copyText('inmail-body', this)">Copy Full Message</button>
+        </div>
+        <pre class="copy-pre" id="inmail-body">Dear Woven by Toyota Engineering &amp; Talent Acquisition Team,
+
+I built a live interactive 3D digital-twin showcase and bilingual application dossier specifically for Woven by Toyota's Senior Systems Software Engineer (Rust, Simulation &amp; Accelerated ML Platform — Arene SDV) roles in Nihonbashi, Tokyo:
+
+• Live Interactive CV (Woven Digital Twin &amp; Telemetry Mesh): https://woven.vaked.dev
+• Formal 履歴書 + 職務経歴書 (PDF): https://woven.vaked.dev/resume.pdf
+• Simulation &amp; Systems Portfolio (PDF): https://woven.vaked.dev/portfolio.pdf
+• Full Application Dossier: https://woven.vaked.dev/application
+
+I combine 9+ years of distributed backend and systems leadership (ASAPP, DailyWire, institutional fintech ETL) with real-time 3D simulation engines (Core Architect on Osiris — simplifaisoul/osiris, plus Age of Gaia &amp; Water-Fall Disc), autonomous agent harnesses (Osaurus), and bit-exact C/Rust low-bit ML inference (pureQTern / MLX-QUANT). I live and breathe Tokyo's craft culture and would love to help ship Arene and Woven City.
+
+Warm regards,
+Péter József Lódri
+https://www.linkedin.com/in/peter-lodri/</pre>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="sec-h"><span class="n">03</span><h2>Technical Stack &amp; Capabilities</h2></div>
+      <div class="skills">
+        <div class="skill"><b>Systems, Rust &amp; Low-Bit Compute</b><p>Rust, C, Swift 6, Go — SIMD, custom Metal/WebGL2 GPU kernels, BitNet b1.58 {-1, 0, +1} ternary quantization (12.80× memory reduction), zero-dependency binaries.</p></div>
+        <div class="skill"><b>Real-Time 3D, Simulation &amp; Spatial DSP</b><p>Unity, Three.js, WebGL2, GLSL/HLSL shaders, oscilloscope vector synthesis, LiDAR/geospatial 3D telemetry (Osiris), procedural Web Audio.</p></div>
+        <div class="skill"><b>Multi-Agent &amp; Open-Source Architecture</b><p>Core Architect on Osaurus (osaurus-ai/osaurus) &amp; Osiris (simplifaisoul/osiris), contributor to Headroom (PR #1418 kompress router), creator of AgentField verifiable DAGs.</p></div>
+        <div class="skill"><b>Distributed Production &amp; Languages</b><p>9+ years shipping high-concurrency Go/Python/Rust/TS systems (ASAPP, DailyWire 110k concurrent users, institutional fintech ETL). Fluent English, native Hungarian, conversational multi-lingual + daily Japanese in Tokyo.</p></div>
+      </div>
+    </section>
+
+    <section id="apply">
+      <div class="sec-h"><span class="n">04</span><h2>Why Woven by Toyota (ウーブン・バイ・トヨタ)</h2></div>
+      <div class="why">
+        <p>Woven by Toyota is executing the most ambitious systems integration challenge in Japan: building Arene as a programmable operating system for millions of vehicles while turning Woven City into a living physical-digital testbed. That requires engineers who can cross cleanly between memory-safe Rust systems, deterministic 3D simulation twins, high-throughput cloud telemetry, and compressed edge ML — the exact intersection I have built across Osiris, pureQTern, MLX-QUANT, and 9+ years of production distributed engineering.</p>
+        <p lang="ja">Woven by Toyotaが日本橋から世界へ発信するソフトウェア・ディファインド・ビークルOS「Arene」と実証都市「Woven City」は、モビリティの歴史を書き換える挑戦です。Rust/Cによる高信頼システム開発、リアルタイム3Dデジタルツイン基盤（Osiris）、11万同時接続を処理した大規模分散テレメトリ、そして車載推論を12.80倍効率化する量子化技術（pureQTern / MLX-QUANT）を結集し、AreneとWoven Cityのコア基盤開発に貢献したいと強く志望しています。</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div><strong>Péter József Lódri</strong> (ロドリ・ペーテル・ヨージェフ) · Passport: BJ3429501 · Visa Ref: LYYT5925161</div>
+    <div>
+      <a href="mailto:peter.lodri@gmail.com">peter.lodri@gmail.com</a> ·
+      <a href="https://www.linkedin.com/in/peter-lodri/" target="_blank" rel="noopener noreferrer">linkedin.com/in/peter-lodri</a> ·
+      <a href="https://github.com/peterlodri-sec" target="_blank" rel="noopener noreferrer">github.com/peterlodri-sec</a> ·
+      <a href="https://github.com/8b-is" target="_blank" rel="noopener noreferrer">github.com/8b-is</a> ·
+      <a href="https://github.com/osaurus-ai/osaurus" target="_blank" rel="noopener noreferrer">osaurus-ai/osaurus</a> ·
+      <a href="https://github.com/simplifaisoul/osiris" target="_blank" rel="noopener noreferrer">simplifaisoul/osiris</a> ·
+      <a href="https://github.com/headroomlabs-ai/headroom/pull/1418" target="_blank" rel="noopener noreferrer">headroom#1418</a>
+    </div>
+    <div>
+      <a href="/resume">Résumé (HTML)</a> ·
+      <a href="/resume.pdf">resume.pdf</a> ·
+      <a href="/portfolio">Portfolio (HTML)</a> ·
+      <a href="/portfolio.pdf">portfolio.pdf</a> ·
+      <a href="/application">Application (HTML)</a> ·
+      <a href="/application.pdf">application.pdf</a> ·
+      <a href="/eli5">ELI5 Guide</a> ·
+      <a href="https://apply.vaked.dev">Master Career Hub (apply.vaked.dev)</a>
+    </div>
+    <div style="margin-top:8px;opacity:.75">fine touch from within · peter + 8b.is &lt;3 · {−1, 0, +1} · om mani padme hum</div>
+  </footer>
+</div>
+
+<script>
+function copyText(id, btn) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  navigator.clipboard.writeText(el.innerText).then(() => {
+    const old = btn.textContent;
+    btn.textContent = "✓ COPIED TO CLIPBOARD";
+    setTimeout(() => { btn.textContent = old; }, 1800);
+  });
+}
+
+(() => {
+  'use strict';
+  const MODE = "woven";
+  const ACCENT = "#ff3366";
+  const SEC = "#62e6c9";
+  const TER = "#b48bff";
+
+  const cnv = document.getElementById('fx');
+  if (!cnv || !cnv.getContext) return;
+  const ctx = cnv.getContext('2d');
+  let W = window.innerWidth, H = window.innerHeight, dpr = Math.min(window.devicePixelRatio || 1, 2);
+  let t = 0;
+  const ptr = { x: W * 0.65, y: H * 0.45, tx: W * 0.65, ty: H * 0.45 };
+
+  function resize() {
+    W = window.innerWidth; H = window.innerHeight;
+    cnv.width = W * dpr; cnv.height = H * dpr;
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  }
+  resize();
+  window.addEventListener('resize', resize, { passive: true });
+  window.addEventListener('pointermove', e => { ptr.tx = e.clientX; ptr.ty = e.clientY; }, { passive: true });
+
+  // Initialize entities for Boids / LiDAR / Systolic / Woven / Taiko
+  const nodes = Array.from({ length: 68 }, (_, i) => ({
+    x: Math.random() * W,
+    y: Math.random() * H,
+    vx: (Math.random() - 0.5) * 2.2,
+    vy: (Math.random() - 0.5) * 2.2,
+    trit: (i % 3) - 1,
+    phase: Math.random() * Math.PI * 2
+  }));
+
+  function frame() {
+    t += 0.014;
+    ptr.x += (ptr.tx - ptr.x) * 0.08;
+    ptr.y += (ptr.ty - ptr.y) * 0.08;
+
+    ctx.fillStyle = 'rgba(4, 6, 10, 0.22)';
+    ctx.fillRect(0, 0, W, H);
+
+    if (MODE === 'sakana') {
+      // Nature-inspired Boids fish school + ternary synaptic links
+      for (let i = 0; i < nodes.length; i++) {
+        const b = nodes[i];
+        const dx = ptr.x - b.x, dy = ptr.y - b.y;
+        const dist = Math.hypot(dx, dy) + 1;
+        if (dist < 320) { b.vx += (dx / dist) * 0.09; b.vy += (dy / dist) * 0.09; }
+        b.vx += Math.cos(t + b.phase) * 0.03;
+        b.vy += Math.sin(t + b.phase) * 0.03;
+        const sp = Math.hypot(b.vx, b.vy) || 1;
+        if (sp > 2.8) { b.vx = (b.vx / sp) * 2.8; b.vy = (b.vy / sp) * 2.8; }
+        b.x = (b.x + b.vx + W) % W;
+        b.y = (b.y + b.vy + H) % H;
+
+        const ang = Math.atan2(b.vy, b.vx);
+        ctx.save();
+        ctx.translate(b.x, b.y);
+        ctx.rotate(ang);
+        ctx.beginPath();
+        ctx.moveTo(9, 0);
+        ctx.lineTo(-6, 4);
+        ctx.lineTo(-3, 0);
+        ctx.lineTo(-6, -4);
+        ctx.closePath();
+        ctx.fillStyle = b.trit === 1 ? ACCENT : (b.trit === 0 ? SEC : TER);
+        ctx.globalAlpha = 0.72;
+        ctx.fill();
+        ctx.restore();
+
+        for (let j = i + 1; j < nodes.length; j++) {
+          const o = nodes[j];
+          const d = Math.hypot(b.x - o.x, b.y - o.y);
+          if (d < 92) {
+            ctx.beginPath();
+            ctx.moveTo(b.x, b.y);
+            ctx.lineTo(o.x, o.y);
+            ctx.strokeStyle = d < 48 ? ACCENT : SEC;
+            ctx.globalAlpha = (1 - d / 92) * 0.25;
+            ctx.stroke();
+          }
+        }
+      }
+      ctx.globalAlpha = 1;
+    } else if (MODE === 'mncore') {
+      // MN-Core 2D Systolic Matrix PE Grid + wavefront pulses
+      const cols = 12, rows = 8;
+      const gx = W * 0.12, gy = H * 0.14, gw = W * 0.76, gh = H * 0.72;
+      const cw = gw / cols, ch = gh / rows;
+      for (let r = 0; r < rows; r++) {
+        for (let c = 0; c < cols; c++) {
+          const x = gx + c * cw + cw * 0.5;
+          const y = gy + r * ch + ch * 0.5;
+          const d = Math.hypot(ptr.x - x, ptr.y - y);
+          const wave = Math.sin(t * 3 - (c + r) * 0.45 - d * 0.01);
+          ctx.strokeStyle = wave > 0.3 ? ACCENT : SEC;
+          ctx.globalAlpha = 0.16 + Math.max(0, wave) * 0.35;
+          ctx.strokeRect(x - cw * 0.34, y - ch * 0.34, cw * 0.68, ch * 0.68);
+          if (wave > 0.65) {
+            ctx.fillStyle = ACCENT;
+            ctx.globalAlpha = 0.28;
+            ctx.fillRect(x - cw * 0.2, y - ch * 0.2, cw * 0.4, ch * 0.4);
+          }
+        }
+      }
+      ctx.globalAlpha = 1;
+    } else if (MODE === 'lidar') {
+      // TIER IV Autoware 3D LiDAR point-cloud rings & perception trajectory
+      const cx = ptr.x, cy = ptr.y;
+      for (let ring = 1; ring <= 9; ring++) {
+        const rad = ring * 44 + Math.sin(t * 2 + ring) * 6;
+        ctx.beginPath();
+        for (let a = 0; a < Math.PI * 2; a += 0.12) {
+          const jitter = Math.sin(a * 7 + t * 3 + ring) * 8;
+          const px = cx + Math.cos(a + t * 0.2) * (rad + jitter);
+          const py = cy + Math.sin(a + t * 0.2) * (rad + jitter) * 0.68;
+          ctx.fillStyle = ring % 2 === 0 ? ACCENT : SEC;
+          ctx.globalAlpha = 0.45 * (1 - ring / 11);
+          ctx.fillRect(px, py, 2.2, 2.2);
+        }
+      }
+      ctx.globalAlpha = 1;
+    } else if (MODE === 'woven') {
+      // Woven City / Arene Isometric Digital Twin Mesh
+      const step = 64;
+      ctx.lineWidth = 1;
+      for (let x = 0; x < W + step; x += step) {
+        for (let y = 0; y < H + step; y += step) {
+          const d = Math.hypot(ptr.x - x, ptr.y - y);
+          const z = Math.sin(d * 0.018 - t * 2.4) * 14;
+          ctx.fillStyle = d < 180 ? ACCENT : SEC;
+          ctx.globalAlpha = d < 240 ? 0.55 : 0.2;
+          ctx.beginPath();
+          ctx.arc(x, y + z, d < 160 ? 2.6 : 1.5, 0, Math.PI * 2);
+          ctx.fill();
+        }
+      }
+      ctx.globalAlpha = 1;
+    } else if (MODE === 'taiko') {
+      // Taiko Based Rollup L1<->L2 Cryptographic Proof Ring
+      const cx = ptr.x, cy = ptr.y;
+      for (let k = 0; k < 5; k++) {
+        const r = 60 + k * 48;
+        ctx.beginPath();
+        ctx.arc(cx, cy, r, t * (k % 2 ? 1 : -1), t * (k % 2 ? 1 : -1) + Math.PI * 1.35);
+        ctx.strokeStyle = k % 2 === 0 ? ACCENT : SEC;
+        ctx.lineWidth = 2;
+        ctx.globalAlpha = 0.38;
+        ctx.stroke();
+      }
+      ctx.globalAlpha = 1;
+    } else {
+      // teamLab Lissajous weave
+      ctx.beginPath();
+      const N = 420;
+      const r = Math.min(W, H) * 0.34;
+      for (let i = 0; i <= N; i++) {
+        const u = (i / N) * Math.PI * 2;
+        const x = ptr.x + Math.sin(3 * u + t) * r * Math.cos(u * 0.5);
+        const y = ptr.y + Math.sin(4 * u - t * 0.8) * r * 0.75;
+        if (i === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+      }
+      ctx.strokeStyle = ACCENT;
+      ctx.lineWidth = 1.6;
+      ctx.globalAlpha = 0.55;
+      ctx.stroke();
+      ctx.globalAlpha = 1;
+    }
+    requestAnimationFrame(frame);
+  }
+  requestAnimationFrame(frame);
+
+  // Ambient Web Audio toggle
+  let ac = null, osc = null, gain = null, playing = false;
+  const btn = document.getElementById('sound-toggle');
+  if (btn) {
+    btn.addEventListener('click', () => {
+      if (!playing) {
+        const AudioCtx = window.AudioContext || window.webkitAudioContext;
+        if (!AudioCtx) return;
+        ac = ac || new AudioCtx();
+        osc = ac.createOscillator();
+        gain = ac.createGain();
+        osc.type = 'sine';
+        osc.frequency.value = 110 + (5 * 27.5);
+        gain.gain.value = 0.03;
+        osc.connect(gain);
+        gain.connect(ac.destination);
+        osc.start();
+        playing = true;
+        btn.classList.add('on');
+      } else {
+        if (osc) { try { osc.stop(); } catch (_) {} osc = null; }
+        playing = false;
+        btn.classList.remove('on');
+      }
+    });
+  }
+})();
+</script>
+</body>
+</html>

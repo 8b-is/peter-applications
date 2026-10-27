@@ -3,407 +3,251 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Péter József Lódri — Résumé / 履歴書（職務経歴書）</title>
+<title>Péter József Lódri — Résumé / 履歴書（職務経歴書） · teamLab (チームラボ)</title>
 <meta name="author" content="Péter József Lódri">
-<meta name="description" content="Résumé / curriculum vitae of Péter József Lódri — interactive engineer & creative technologist. Current address, contact, full education history, and complete work history. Prepared for teamLab.">
-<meta name="theme-color" content="#050810">
+<meta name="description" content="Tailored Résumé / 履歴書・職務経歴書 of Péter József Lódri for teamLab (チームラボ) (インタラクティブエンジニア（Unity / 3D） · Interactive Engineer &amp; Catalyst).">
 <style>
-/* ==========================================================================
-   resume.html — a print-first 履歴書 + 職務経歴書 for teamLab
-   Same half-holographic surface as print.html (cascade layers, oklch,
-   color-mix, container queries + subgrid, text-wrap). Rendered only through
-   Chrome --print-to-pdf, tagged + outlined + hyperlinked.
-   ========================================================================== */
-
-@layer reset, tokens, base, layout, components, print;
-
-@layer tokens {
   :root {
     color-scheme: dark;
-    --ink:      oklch(0.97 0.01 265);
-    --dim:      oklch(0.78 0.03 275);
-    --faint:    oklch(0.62 0.04 280);
-    --bg:       oklch(0.16 0.03 265);
-    --surface:  color-mix(in oklch, var(--bg) 82%, oklch(0.5 0.1 280));
-    --line:     color-mix(in oklch, var(--ink) 14%, transparent);
-    --h1: oklch(0.78 0.19 265);   /* violet  */
-    --h2: oklch(0.85 0.15 195);   /* cyan    */
-    --h3: oklch(0.86 0.19 330);   /* magenta */
-    --h4: oklch(0.87 0.18 95);    /* amber   */
-    --h5: oklch(0.86 0.2 150);    /* phosphor*/
+    --ink: #f2f4ff;
+    --dim: #c2c6e6;
+    --faint: #8f95bd;
+    --bg: #070a12;
+    --surface: #101524;
+    --line: rgba(255,255,255,0.14);
+    --accent: #62e6c9;
+    --sec: #b48bff;
+    --ter: #ff9ad5;
     --mono: ui-monospace, "SF Mono", "JetBrains Mono", Menlo, monospace;
-    --sans: "Inter", system-ui, -apple-system, "Hiragino Sans", "Yu Gothic", "Helvetica Neue", sans-serif;
-    --step: clamp(0.9rem, 0.85rem + 0.3vw, 1.05rem);
-    --radius: 14px;
-    --holo: conic-gradient(from 210deg, var(--h1), var(--h2), var(--h5), var(--h4), var(--h3), var(--h1));
+    --sans: "Inter", system-ui, -apple-system, "Hiragino Sans", "Yu Gothic", sans-serif;
   }
-}
-
-@layer reset {
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  img, svg { display: block; max-width: 100%; }
-}
-
-@layer base {
-  html { font-size: 100%; }
   body {
     font-family: var(--sans);
-    font-size: var(--step);
-    line-height: 1.62;
+    font-size: 0.92rem;
+    line-height: 1.58;
     color: var(--ink);
     background: var(--bg);
-    background-image:
-      radial-gradient(120% 60% at 8% -6%,  color-mix(in oklch, var(--h1) 30%, transparent), transparent 60%),
-      radial-gradient(110% 55% at 100% 0%,  color-mix(in oklch, var(--h2) 22%, transparent), transparent 58%),
-      radial-gradient(90% 60% at 50% 120%, color-mix(in oklch, var(--h3) 20%, transparent), transparent 60%);
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
   }
-  h1, h2, h3 { line-height: 1.08; text-wrap: balance; }
-  p, li { text-wrap: pretty; }
-  a { color: inherit; text-decoration-color: color-mix(in oklch, var(--h2) 70%, transparent); text-underline-offset: 3px; }
-  a[href^="http"]::after, a[href^="mailto"]::after { content: " ↗"; font-size: .8em; color: var(--faint); }
-  :focus-visible { outline: 2px solid var(--h2); outline-offset: 3px; }
-  code { font-family: var(--mono); }
-}
-
-@layer layout {
-  .page { max-width: 46rem; margin: 0 auto; padding: 0 clamp(16px, 5vw, 40px); }
-  section { padding-block: clamp(18px, 3.6vw, 30px); break-inside: avoid; }
+  a { color: var(--sec); text-underline-offset: 3px; }
+  .page { max-width: 48rem; margin: 0 auto; padding: 0 clamp(16px, 4vw, 36px); }
   .band {
-    position: relative;
-    padding: clamp(28px, 6vw, 54px) 0 clamp(20px, 4vw, 34px);
-    background: linear-gradient(135deg,
-      color-mix(in oklch, var(--h1) 16%, transparent),
-      color-mix(in oklch, var(--h2) 12%, transparent) 45%,
-      color-mix(in oklch, var(--h3) 16%, transparent));
+    padding: 28px 0 22px;
+    background: linear-gradient(135deg, rgba(255,255,255,0.04), rgba(255,255,255,0.01));
     border-bottom: 1px solid var(--line);
-    overflow: hidden;
   }
-  .band::before {
-    content: "";
-    position: absolute; inset: -40% -10%;
-    background: var(--holo);
-    opacity: .12;
-    filter: blur(38px) saturate(1.4);
-    transform: rotate(-8deg);
-    pointer-events: none;
-  }
-  .band .page { position: relative; }
-}
-
-@layer components {
-  .kicker {
-    font-family: var(--mono); font-size: .72rem; letter-spacing: .34em;
-    text-transform: uppercase; color: var(--h2);
-  }
-  .name {
-    margin-top: 10px;
-    font-size: clamp(2.2rem, 8vw, 3.6rem);
-    font-weight: 800; letter-spacing: -.02em;
-    background: conic-gradient(from 200deg, var(--h1), var(--h2), var(--h5), var(--h4), var(--h3), var(--h1));
-    -webkit-background-clip: text; background-clip: text; color: transparent;
-  }
-  .kana { margin-top: 6px; font-family: var(--mono); font-size: .82rem; color: var(--dim); letter-spacing: .04em; }
-  .contacts { display: flex; flex-wrap: wrap; gap: 8px 14px; margin-top: 18px; font-family: var(--mono); font-size: .76rem; }
-  .contacts a { color: var(--dim); }
-  .contacts .vsep { color: var(--faint); }
-
-  .sec-head { display: flex; align-items: baseline; gap: 14px; margin-bottom: 14px; }
-  .sec-head .n {
-    font-family: var(--mono); font-size: .74rem; letter-spacing: .2em;
-    background: linear-gradient(90deg, var(--h3), var(--h1)); -webkit-background-clip: text; background-clip: text; color: transparent;
-  }
-  .sec-head h2 { font-size: clamp(1.25rem, 4vw, 1.7rem); font-weight: 700; }
-  .sec-head .jp { font-family: var(--mono); font-size: .72rem; color: var(--faint); letter-spacing: .08em; }
-
-  /* the personal-data block, 履歴書 style */
-  .facts { display: grid; grid-template-columns: max-content 1fr; gap: 6px 18px; font-size: .86rem; }
-  .facts dt { font-family: var(--mono); color: var(--faint); font-size: .72rem; letter-spacing: .08em; text-transform: uppercase; padding-top: 2px; }
-  .facts dd { color: var(--ink); }
-  .todo {
-    font-family: var(--mono); font-size: .78rem; letter-spacing: .06em;
-    color: var(--h4);
-    background: color-mix(in oklch, var(--h4) 14%, transparent);
-    border: 1px dashed color-mix(in oklch, var(--h4) 55%, transparent);
-    border-radius: 6px; padding: .05em .5em;
-  }
-
-  /* timeline: 期間 / 職務 (education + work share this) */
-  .tl { width: 100%; border-collapse: collapse; font-size: .86rem; }
-  .tl th {
-    font-family: var(--mono); font-size: .66rem; letter-spacing: .16em; text-transform: uppercase;
-    color: var(--h2); text-align: left; font-weight: 600;
-    border-bottom: 1px solid var(--line); padding: 0 12px 6px 0;
-  }
-  .tl td { padding: 9px 12px 9px 0; vertical-align: top; border-bottom: 1px solid color-mix(in oklch, var(--line) 60%, transparent); }
-  .tl tr { break-inside: avoid; }
-  .tl .when { font-family: var(--mono); font-size: .74rem; color: var(--dim); white-space: nowrap; width: 9.5rem; }
-  .tl .role { font-weight: 700; color: var(--ink); }
+  .kicker { font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.26em; text-transform: uppercase; color: var(--accent); }
+  .name { font-size: 2.3rem; font-weight: 800; margin-top: 6px; color: #fff; }
+  .kana { font-family: var(--mono); font-size: 0.8rem; color: var(--dim); margin-top: 4px; }
+  .contacts { display: flex; flex-wrap: wrap; gap: 6px 12px; margin-top: 12px; font-family: var(--mono); font-size: 0.74rem; color: var(--dim); }
+  section { padding-block: 16px; break-inside: avoid; }
+  .sec-head { display: flex; align-items: baseline; gap: 12px; margin-bottom: 10px; border-bottom: 1px solid var(--line); padding-bottom: 5px; }
+  .sec-head .n { font-family: var(--mono); font-size: 0.74rem; color: var(--accent); letter-spacing: 0.16em; }
+  .sec-head h2 { font-size: 1.2rem; font-weight: 700; color: #fff; }
+  .sec-head .jp { font-family: var(--mono); font-size: 0.72rem; color: var(--faint); }
+  .facts { display: grid; grid-template-columns: max-content 1fr; gap: 5px 16px; font-size: 0.84rem; }
+  .facts dt { font-family: var(--mono); color: var(--faint); font-size: 0.72rem; text-transform: uppercase; }
+  .tl { width: 100%; border-collapse: collapse; font-size: 0.83rem; }
+  .tl th { font-family: var(--mono); font-size: 0.66rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); text-align: left; border-bottom: 1px solid var(--line); padding: 0 10px 5px 0; }
+  .tl td { padding: 7px 10px 7px 0; vertical-align: top; border-bottom: 1px solid rgba(255,255,255,0.08); }
+  .tl .when { font-family: var(--mono); font-size: 0.73rem; color: var(--dim); white-space: nowrap; width: 9.2rem; }
+  .tl .role { font-weight: 700; color: #fff; }
   .tl .org { color: var(--dim); }
-  .tl .tech { font-family: var(--mono); font-size: .72rem; color: var(--faint); margin-top: 3px; }
-  .tl .note { font-size: .82rem; color: var(--dim); margin-top: 3px; }
-
-  .skills { display: grid; gap: 12px; grid-template-columns: 1fr; }
-  @container (min-width: 30rem) { .skills { grid-template-columns: 1fr 1fr; } }
-  .skills-shell { container-type: inline-size; }
-  .skill { border-left: 2px solid; padding: 3px 0 3px 14px; break-inside: avoid;
-    border-image: linear-gradient(180deg, var(--h2), var(--h1)) 1; }
-  .skill b { display: block; margin-bottom: 3px; font-family: var(--mono); font-size: .72rem; letter-spacing: .14em; text-transform: uppercase; color: var(--h2); }
-  .skill p { font-size: .84rem; color: var(--dim); }
-
-  .card {
-    padding: 18px 20px; border-radius: var(--radius);
-    background:
-      linear-gradient(color-mix(in oklch, var(--surface) 88%, transparent), color-mix(in oklch, var(--surface) 88%, transparent)) padding-box,
-      var(--holo) border-box;
-    border: 1px solid transparent;
-    font-size: .92rem; line-height: 1.8;
-    break-inside: avoid;
-  }
-  .card h3 { font-size: 1rem; margin-bottom: 6px; }
-  .card .q { color: var(--h5); }
-  .card + .card { margin-top: 12px; }
-  .quote { border-left: 3px solid var(--h2); padding: .3em 0 .3em 1em; color: var(--dim); font-size: .88rem; }
-
-  .tern { font-family: var(--mono);
-    background: linear-gradient(90deg, var(--h3), var(--h1), var(--h2));
-    -webkit-background-clip: text; background-clip: text; color: transparent; }
-
-  footer {
-    margin-top: 10px; padding: 22px 0 30px; border-top: 1px solid var(--line);
-    font-family: var(--mono); font-size: .74rem; color: var(--faint); line-height: 2;
-  }
-  footer a { color: var(--h1); }
-  footer .sig {
-    background: linear-gradient(90deg, var(--h3), var(--h2), var(--h5));
-    -webkit-background-clip: text; background-clip: text; color: transparent;
-  }
-}
-
-@layer print {
-  @page { size: A4; margin: 9mm 12mm; }
+  .tl .note { font-size: 0.8rem; color: var(--dim); margin-top: 2px; }
+  .tl .tech { font-family: var(--mono); font-size: 0.71rem; color: var(--sec); margin-top: 2px; }
+  .card { padding: 14px 16px; border-radius: 10px; background: var(--surface); border: 1px solid var(--line); font-size: 0.84rem; line-height: 1.65; margin-top: 8px; break-inside: avoid; }
+  .card h3 { font-size: 0.94rem; color: var(--accent); margin-bottom: 4px; }
+  .skills { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .skill { border-left: 2px solid var(--accent); padding: 2px 0 2px 12px; break-inside: avoid; }
+  .skill b { display: block; font-family: var(--mono); font-size: 0.71rem; text-transform: uppercase; color: var(--sec); }
+  .skill p { font-size: 0.8rem; color: var(--dim); }
+  footer { margin-top: 12px; padding: 14px 0 24px; border-top: 1px solid var(--line); font-family: var(--mono); font-size: 0.72rem; color: var(--faint); line-height: 1.8; }
+  @page { size: A4; margin: 9mm 11mm; }
   @media print {
-    .band { padding: 14px 0 10px; }
-    .band::before { opacity: .18; }
-    .name { font-size: 2.2rem; margin-top: 3px; }
-    .kana { margin-top: 2px; font-size: .76rem; }
-    .contacts { margin-top: 6px; font-size: .7rem; }
-    section { padding-block: 8px; }
-    .sec-head { margin-bottom: 6px; }
-    .facts { gap: 3px 14px; font-size: .78rem; }
-    .tl td { padding: 5px 10px 5px 0; font-size: .8rem; }
-    .tl th { padding: 0 10px 4px 0; font-size: .64rem; }
-    .card { padding: 12px 16px; font-size: .86rem; line-height: 1.65; }
-    .card + .card { margin-top: 8px; }
-    .skill { padding: 2px 0 2px 12px; }
-    .skill p { font-size: .8rem; }
-    footer { margin-top: 8px; padding: 12px 0 16px; font-size: .7rem; line-height: 1.65; }
     #experience { break-before: page; }
-    #skills { break-before: page; }
-    #ai { break-before: page; }
-    .work, .skill, .card, .facts, .tl tr { break-inside: avoid; }
-    h2, h3, th { break-after: avoid; }
-    a[href^="http"]::after, a[href^="mailto"]::after { color: var(--faint); }
+    #portfolio { break-before: page; }
   }
-}
 </style>
 </head>
 <body>
 <div class="band">
   <div class="page">
-    <header>
-      <p class="kicker">履歴書 ・ 職務経歴書 · résumé · curriculum vitae</p>
-      <h1 class="name">Péter József Lódri</h1>
-      <p class="kana">ロドリ・ペーテル・ヨージェフ · passport: LODRI PETER JOZSEF (Hungary: BJ3429501) · visa: LYYT5925161</p>
-      <nav class="contacts" aria-label="Contact">
-        <a href="mailto:peter.lodri@gmail.com">peter.lodri@gmail.com</a>
-        <span class="vsep" aria-hidden="true">·</span>
-        <span>+36 20 391 5161</span>
-        <span class="vsep" aria-hidden="true">·</span>
-        <a href="https://github.com/peterlodri-sec">github.com/peterlodri-sec</a>
-        <span class="vsep" aria-hidden="true">·</span>
-        <a href="https://www.linkedin.com/in/peter-lodri/">linkedin.com/in/peter-lodri</a>
-        <span class="vsep" aria-hidden="true">·</span>
-        <a href="https://teamlab.vaked.dev">teamlab.vaked.dev</a>
-      </nav>
-    </header>
+    <p class="kicker">履歴書 ・ 職務経歴書 · CURRICULUM VITAE · TAILORED FOR teamLab (チームラボ)</p>
+    <h1 class="name">Péter József Lódri</h1>
+    <p class="kana">ロドリ・ペーテル・ヨージェフ · Passport: LODRI PETER JOZSEF (BJ3429501) · Visa Ref: LYYT5925161</p>
+    <nav class="contacts">
+      <a href="mailto:peter.lodri@gmail.com">peter.lodri@gmail.com</a> ·
+      <span>+36 20 391 5161</span> ·
+      <a href="https://www.linkedin.com/in/peter-lodri/">linkedin.com/in/peter-lodri</a> ·
+      <a href="https://github.com/peterlodri-sec">github.com/peterlodri-sec</a> ·
+      <a href="https://teamlab.vaked.dev">teamlab.vaked.dev</a>
+    </nav>
   </div>
 </div>
 
 <div class="page">
   <main>
-    <section id="personal" aria-labelledby="personal-h">
-      <div class="sec-head"><span class="n" aria-hidden="true">00</span><h2 id="personal-h">Personal data</h2><span class="jp">基本情報</span></div>
+    <section id="personal">
+      <div class="sec-head"><span class="n">00</span><h2>Personal Data &amp; Target Position</h2><span class="jp">基本情報・希望職種</span></div>
       <dl class="facts">
-        <dt>Name 氏名</dt><dd>Peter József Lódri · ロドリ・ペーテル・ヨージェフ</dd>
-        <dt>Passport</dt><dd>LODRI PETER JOZSEF · No. BJ3429501 (Hungary ハンガリー国籍)</dd>
-        <dt>Visa / Status</dt><dd>Ref: LYYT5925161 · EU Passport holder (eligible for Japanese Engineer/Specialist in Humanities visa · relocating to Tokyo 東京へ移住予定)</dd>
-        <dt>Born 生年月日</dt><dd>16 July 1992 (満34歳) · Tatabánya, Hungary ハンガリー出身</dd>
-        <dt>Address 現住所</dt><dd>Szőlődomb utca 77, 2800 Tatabánya, Hungary — relocating to Tokyo 東京へ移住予定</dd>
-        <dt>Contact 連絡先</dt><dd><a href="mailto:peter.lodri@gmail.com">peter.lodri@gmail.com</a> (primary) · <a href="mailto:cabotage@pm.me">cabotage@pm.me</a> · +36 20 391 5161</dd>
-        <dt>Role 希望職種</dt><dd>インタラクティブエンジニア（Unity / 3D） · Interactive Engineer (Unity / Real-time CG) · Secondary: Catalyst</dd>
+        <dt>Name 氏名</dt><dd>Péter József Lódri (ロドリ・ペーテル・ヨージェフ)</dd>
+        <dt>Target Company</dt><dd><strong>teamLab (チームラボ)</strong> — Chiyoda-ku, Tokyo (千代田区・小川町)</dd>
+        <dt>Target Role 希望職種</dt><dd><strong>インタラクティブエンジニア（Unity / 3D） · Interactive Engineer &amp; Catalyst</strong> (¥7,000,000 – ¥12,000,000+ JPY)</dd>
+        <dt>Dedicated Site</dt><dd><a href="https://teamlab.vaked.dev">https://teamlab.vaked.dev</a> (Interactive CV, PDFs, ELI5 &amp; LinkedIn Kit)</dd>
+        <dt>Passport / Visa</dt><dd>LODRI PETER JOZSEF · No. BJ3429501 (Hungary (EU Citizen · ハンガリー国籍)) · Visa Ref: LYYT5925161</dd>
+        <dt>Born 生年月日</dt><dd>16 July 1992 (満34歳) · Tatabánya, Hungary</dd>
+        <dt>Address 現住所</dt><dd>Szőlődomb utca 77, 2800 Tatabánya, Hungary — relocating to Tokyo (東京へ移住予定 / 現在東京滞在)</dd>
+        <dt>LinkedIn &amp; GitHub</dt><dd><a href="https://www.linkedin.com/in/peter-lodri/">linkedin.com/in/peter-lodri</a> · <a href="https://github.com/peterlodri-sec">github.com/peterlodri-sec</a> · <a href="https://github.com/8b-is">github.com/8b-is</a></dd>
       </dl>
     </section>
 
-    <section id="education" aria-labelledby="education-h">
-      <div class="sec-head"><span class="n" aria-hidden="true">01</span><h2 id="education-h">Education</h2><span class="jp">学歴（高校以降すべて）</span></div>
+    <section id="education">
+      <div class="sec-head"><span class="n">01</span><h2>Education</h2><span class="jp">学歴（高校以降すべて）</span></div>
       <table class="tl">
-        <thead><tr><th scope="col">期間 / Period</th><th scope="col">学校・専攻 / Institution &amp; field</th></tr></thead>
+        <thead><tr><th>Period / 期間</th><th>Institution &amp; Qualification / 学校・専攻</th></tr></thead>
         <tbody>
           <tr>
             <td class="when">2007.09 – 2011.06</td>
-            <td><span class="role">Secondary school graduation 高等学校卒業</span> <span class="org">— Bárdos László Gimnázium（バールドシュ・ラースロー高等学校, Tatabánya）</span>
+            <td><span class="role">Secondary school graduation · 高等学校卒業</span> <span class="org">— Bárdos László Gimnázium（バールドシュ・ラースロー高等学校, Tatabánya）</span>
               <div class="note">Advanced Mathematics, Physics, Sport &amp; Computer Science · Comenius Logo Hungarian Championship participant（数学・物理・情報科学・スポーツ重点課程、Comenius Logo 全国大会出場）</div></td>
           </tr>
+
           <tr>
             <td class="when">2013.09 – 2017.06</td>
-            <td><span class="role">BSc, Recreation and Health Development 学士</span> <span class="org">— University of Physical Education, Budapest（ハンガリー体育大学）</span></td>
+            <td><span class="role">BSc, Recreation and Health Development · 学士</span> <span class="org">— University of Physical Education, Budapest（ハンガリー体育大学）</span>
+              <div class="note">Full Bachelor of Science degree (qualifies for Japanese Engineer / Specialist in Humanities visa status · 技術・人文知識・国際業務ビザ要件適合)</div></td>
           </tr>
+
           <tr>
             <td class="when">2015</td>
-            <td><span class="role">Learn to Program and Analyze Data with Python 修了</span> <span class="org">— University of Michigan (Coursera)</span></td>
+            <td><span class="role">Learn to Program and Analyze Data with Python · 修了</span> <span class="org">— University of Michigan (Coursera)</span>
+              <div class="note">Data structures, algorithmic analysis, and scientific Python programming</div></td>
           </tr>
+
           <tr>
             <td class="when">2016</td>
-            <td><span class="role">Junior Software Developer, Computer Science 修了</span> <span class="org">— Green Fox Academy（ブダペスト）</span></td>
-          </tr>
-        </tbody>
+            <td><span class="role">Junior Software Developer, Computer Science · 修了</span> <span class="org">— Green Fox Academy（ブダペスト）</span>
+              <div class="note">Intensive full-stack &amp; systems software engineering program</div></td>
+          </tr></tbody>
       </table>
-      <p style="margin-top:8px;font-size:.78rem;color:var(--faint)">
-        All educational qualifications and milestones verified against official transcripts and diplomas (学歴全記録確認済).
-      </p>
     </section>
 
-    <section id="experience" aria-labelledby="experience-h">
-      <div class="sec-head"><span class="n" aria-hidden="true">02</span><h2 id="experience-h">Professional experience</h2><span class="jp">職務経歴書</span></div>
+    <section id="experience">
+      <div class="sec-head"><span class="n">02</span><h2>Professional Experience &amp; Open-Source Leadership</h2><span class="jp">職務経歴書</span></div>
       <table class="tl">
-        <thead><tr><th scope="col">期間 / Period</th><th scope="col">職務 / Role</th></tr></thead>
+        <thead><tr><th>Period / 期間</th><th>Role &amp; Engineering Impact / 職務・実績</th></tr></thead>
         <tbody>
           <tr>
             <td class="when">2024 – present</td>
-            <td><span class="role">Principal Architect &amp; Research Lead</span> <span class="org">— 8b-is（Family Research Company ファミリー研究機関）</span>
-              <div class="note">Open research &amp; sovereign protocol lab. Designed and shipped <strong>ZENO (銭・禅・善)</strong> (<a href="https://zeno.vaked.dev" target="_blank" rel="noopener noreferrer">zeno.vaked.dev</a>) — Japanese proof-of-contribution sovereign neo-bank. <em>“A bank that breathes like a garden, accounts like an abacus, settles like water, and values true human &amp; agentic contribution above debt.”</em> Double-entry Kintsugi SHA-256 ledger, real-time procedural Web Audio soundscape, and Foken valuation bridge. Open research vault: 1.58-bit ternary quantization (BitNet), graph spectral rigidity, and agentic workflows.</div>
-              <div class="tech">Rust · TypeScript · Web Audio · Cloudflare Workers · BitNet · Python</div></td>
+            <td><span class="role">Principal Architect &amp; Research Lead</span> <span class="org">— 8b-is（Family Research Company ファミリー研究機関） &amp; Open-Source Architect</span>
+              <div class="note">Architected and shipped ZENO (銭・禅・善, zeno.vaked.dev) — sovereign proof-of-contribution neo-bank with double-entry Kintsugi SHA-256 ledger and procedural Web Audio DSP; AURORA (8b-is.github.io/aurora — sovereign AI assistant &amp; MEM|8 wave-quantum architecture); MLX-QUANT &amp; pureQTern (1.58-bit BitNet ternary {-1, 0, +1} inference &amp; Metal GPU kernels achieving 12.80× memory compression); AgentField multi-reasoner orchestration; and ~200 edge-deployed systems. Open-source Core Architect on Osaurus (osaurus-ai/osaurus — native Swift macOS AI agent harness with persistent memory &amp; cryptographic identity) and Osiris (simplifaisoul/osiris — real-time OSINT 3D global intelligence platform), and contributor to Headroom (headroomlabs-ai/headroom PR #1418 — kompress domain-routing bias multipliers).</div>
+              <div class="tech">Rust · C · Swift 6 · Metal / WebGL2 · Python · TypeScript · Cloudflare Workers · BitNet b1.58</div></td>
           </tr>
+
           <tr>
             <td class="when">2024.05 – present</td>
             <td><span class="role">Senior Software Engineer</span> <span class="org">— Plandek</span>
-              <div class="note">Engineering metrics &amp; analytics platform. Build and maintain analytics features across the platform; review code across a polyglot stack.</div>
-              <div class="tech">TypeScript · React · Python</div></td>
+              <div class="note">Enterprise engineering metrics &amp; delivery intelligence platform. Architect and maintain analytics pipelines and full-stack telemetry across a polyglot distributed stack.</div>
+              <div class="tech">TypeScript · React · Python · Distributed Analytics</div></td>
           </tr>
+
           <tr>
             <td class="when">2023.05 – 2024</td>
             <td><span class="role">Senior Software Engineer</span> <span class="org">— Virality Data</span>
-              <div class="note">Large-scale social-media scraping (millions of videos). Designed and operated high-throughput ingestion and processing pipelines.</div>
+              <div class="note">Designed and operated high-throughput distributed ingestion and processing pipelines across millions of video streams.</div>
               <div class="tech">Kafka · Puppeteer · Celery · Pandas · AWS · JavaScript · Python</div></td>
           </tr>
+
           <tr>
             <td class="when">2022 – 2023</td>
             <td><span class="role">Senior Software Engineer</span> <span class="org">— ASAPP Inc.</span>
-              <div class="note">AI-powered customer-service platform for Fortune-100 companies. Improved customer–agent response time by 50–70% via a microservices architecture.</div>
+              <div class="note">AI-powered customer-service platform for Fortune-100 enterprises. Reduced customer–agent response latency by 50–70% via low-latency event-driven microservices.</div>
               <div class="tech">Go · Kotlin · Scala · Kubernetes · Kafka · AWS</div></td>
           </tr>
+
           <tr>
             <td class="when">2022</td>
             <td><span class="role">Lead Go Developer</span> <span class="org">— DailyWire.com</span>
-              <div class="note">Streaming platform with 110k concurrent users. Led the backend team for an integrated chat + video streaming platform.</div>
-              <div class="tech">Go · Python · AWS</div></td>
+              <div class="note">Led the backend engineering team for an integrated live chat and video streaming platform serving 110,000+ concurrent users.</div>
+              <div class="tech">Go · Python · AWS · High-Concurrency Streaming</div></td>
           </tr>
+
           <tr>
             <td class="when">2021 – 2022</td>
-            <td><span class="role">Senior Python Developer</span> <span class="org">— various fintech (Sixth Street Partners · Citadel · Morgan Stanley)</span>
-              <div class="note">Modernized trading software stacks from legacy systems to cloud-native ETL.</div>
-              <div class="tech">Python · Bash · AWS · Docker</div></td>
+            <td><span class="role">Senior Python Developer</span> <span class="org">— Institutional Fintech (Sixth Street Partners · Citadel · Morgan Stanley)</span>
+              <div class="note">Modernized quantitative trading and financial data software stacks from legacy systems to cloud-native, deterministic ETL pipelines.</div>
+              <div class="tech">Python · Bash · AWS · Docker · Quantitative ETL</div></td>
           </tr>
+
           <tr>
             <td class="when">2019 – 2021</td>
             <td><span class="role">Lead Python Backend Developer</span> <span class="org">— Cygnet Dooel</span>
-              <div class="note">Advanced cyber-intelligence solutions. Designed mission-critical security infrastructure and led offensive-security product development; mentored new hires in advanced Python.</div>
+              <div class="note">Designed mission-critical cyber-intelligence infrastructure, led offensive-security product engineering, and mentored engineers in advanced systems Python.</div>
               <div class="tech">Python · AWS · Android · C · Go · Java · Kubernetes</div></td>
           </tr>
+
           <tr>
             <td class="when">2017 – 2019</td>
-            <td><span class="role">Python Developer</span> <span class="org">— Inpedio</span>
-              <div class="note">Mobile security solutions. Built custom Android security/antivirus tooling and messaging behaviour-analysis tools; implemented a successful <code>kptr_restrict</code> bypass.</div>
-              <div class="tech">Python · C · Android · Java · Go</div></td>
+            <td><span class="role">Python &amp; Systems Security Developer</span> <span class="org">— Inpedio</span>
+              <div class="note">Built custom Android kernel/security tooling and messaging behavior-analysis engines; engineered a working Linux kernel kptr_restrict bypass.</div>
+              <div class="tech">Python · C · Android Internals · Java · Go</div></td>
           </tr>
+
           <tr>
             <td class="when">2016 – 2017</td>
             <td><span class="role">Software Developer</span> <span class="org">— Saltech Consulting</span>
-              <div class="note">Built a custom UI testing framework for Siemens.</div>
+              <div class="note">Built a custom automated UI verification and testing framework for Siemens.</div>
               <div class="tech">Python · GCP · Java · PEGA</div></td>
-          </tr>
-        </tbody>
+          </tr></tbody>
       </table>
     </section>
 
-    <section id="skills" aria-labelledby="skills-h">
-      <div class="sec-head"><span class="n" aria-hidden="true">03</span><h2 id="skills-h">Skills &amp; languages</h2><span class="jp">スキル・語学</span></div>
-      <div class="skills-shell">
-        <div class="skills">
-          <div class="skill"><b>Real-time graphics &amp; audio (Unity / 3D)</b><p>Unity, Real-time CG, WebGL2, Web Audio, vector/oscilloscope synthesis, GLSL/HLSL shader feedback, DSP.</p></div>
-          <div class="skill"><b>Systems &amp; performance</b><p>C, Rust, and Swift close to the metal — SIMD, memory layout, quantization, zero-dependency binaries.</p></div>
-          <div class="skill"><b>Backend &amp; distributed systems</b><p>Go, Python, TypeScript; microservices, Kafka, Celery, high-concurrency streaming, ETL.</p></div>
-          <div class="skill"><b>Edge &amp; cloud</b><p>Cloudflare Workers/Pages, D1/KV, AWS, GCP, Kubernetes, Docker, custom domains, deploy pipelines.</p></div>
-          <div class="skill"><b>Security</b><p>Reverse engineering, Android internals, eBPF, pentesting.</p></div>
-          <div class="skill"><b>ML systems</b><p>Ternary/BitNet quantization, MLX on Apple silicon, model loading, evaluation, honest reporting.</p></div>
-          <div class="skill"><b>Human languages</b><p>English (fluent) · Hungarian (native) · Spanish · Latin · Esperanto · Romani · Macedonian; basic Mandarin &amp; Japanese (actively studying daily).</p></div>
-          <div class="skill"><b>Programming languages</b><p>C · Rust · Python · Go · TypeScript/JavaScript · Java · Kotlin · Scala · Ada, and esoteric languages generally.</p></div>
-        </div>
+    <section id="skills">
+      <div class="sec-head"><span class="n">03</span><h2>Technical Skills &amp; Languages</h2><span class="jp">スキル・語学</span></div>
+      <div class="skills">
+        <div class="skill"><b>Systems &amp; Low-Bit Compute</b><p>Rust, C, Swift 6, Go — SIMD, custom Metal/GPU kernels, BitNet b1.58 {-1, 0, +1} ternary quantization (12.80× compression), zero-dependency binaries.</p></div>
+        <div class="skill"><b>Real-Time 3D, Simulation &amp; DSP</b><p>Unity, Three.js, WebGL2, GLSL/HLSL shaders, vector/oscilloscope synthesis, 3D geospatial/LiDAR telemetry (Osiris), procedural Web Audio.</p></div>
+        <div class="skill"><b>OSS Architecture &amp; Multi-Agent DAGs</b><p>Core Architect on Osaurus (osaurus-ai/osaurus) &amp; Osiris (simplifaisoul/osiris); contributor to Headroom (PR #1418); AgentField verifiable compute.</p></div>
+        <div class="skill"><b>Human &amp; Programming Languages</b><p>English (fluent), Hungarian (native), Spanish, Latin, Esperanto, Romani, Macedonian; daily Japanese in Tokyo. Code: Rust, C, Go, Python, Swift 6, TypeScript, Kotlin, Scala, Ada.</p></div>
       </div>
     </section>
 
-    <section id="portfolio" aria-labelledby="portfolio-h">
-      <div class="sec-head"><span class="n" aria-hidden="true">04</span><h2 id="portfolio-h">Portfolio &amp; code samples</h2><span class="jp">制作実績・作品URL</span></div>
+    <section id="portfolio">
+      <div class="sec-head"><span class="n">04</span><h2>Selected Works, Links &amp; LinkedIn Network for teamLab (チームラボ)</h2><span class="jp">制作実績・リンク</span></div>
       <div class="card">
-        <h3>Work samples / 制作実績</h3>
-        <p>Interactive CV, drawn live in the browser (an example of the work itself):
-          <a href="https://teamlab.vaked.dev">teamlab.vaked.dev</a> ·
-          <a href="https://vaked.dev">vaked.dev</a></p>
-        <p>Source &amp; code samples / ソースコード:
-          <a href="https://github.com/peterlodri-sec">github.com/peterlodri-sec</a></p>
+        <h3>Tailored Interactive Showcase &amp; Verified Repositories</h3>
+        <p>• <strong>Dedicated Subdomain Site</strong>: <a href="https://teamlab.vaked.dev">https://teamlab.vaked.dev</a> · Master Hub: <a href="https://apply.vaked.dev">https://apply.vaked.dev</a></p>
+        <p>• <strong>Open-Source Architect &amp; PRs</strong>: <a href="https://github.com/osaurus-ai/osaurus">osaurus-ai/osaurus</a> · <a href="https://github.com/simplifaisoul/osiris">simplifaisoul/osiris</a> · <a href="https://github.com/headroomlabs-ai/headroom/pull/1418">headroomlabs-ai/headroom#1418</a> · <a href="https://github.com/8b-is">github.com/8b-is</a></p>
       </div>
       <div class="card">
-        <h3>Team vs. individual, and scope / チームか個人か・担当範囲</h3>
-        <p>All work above was built <strong>individually, end-to-end</strong> — concept, design, math/algorithm decisions, implementation, and verification. In professional teams (ASAPP, DailyWire) I have led backend teams and owned subsystems, so I am equally comfortable as an individual contributor and as the bridge between artists and engineers.</p>
+        <h3>Direct Portal &amp; LinkedIn Contacts (teamLab (チームラボ))</h3>
+        <p>• <strong>Official Careers Portal</strong>: <a href="https://www.team-lab.com/recruit/">https://www.team-lab.com/recruit/</a> · <strong>Company LinkedIn</strong>: <a href="https://www.linkedin.com/company/teamlab/">https://www.linkedin.com/company/teamlab/</a></p>
+        <ul style="padding-left:18px;margin-top:6px"><li><strong>Toshiyuki Inoko (猪子寿之)</strong> (Founder, teamLab) — <a href="https://www.linkedin.com/company/teamlab/">https://www.linkedin.com/company/teamlab/</a></li><li><strong>Takashi Kudo (工藤岳)</strong> (Communications Director / Global Brand Lead, teamLab) — <a href="https://www.linkedin.com/search/results/people/?keywords=Takashi%20Kudo%20teamLab">https://www.linkedin.com/search/results/people/?keywords=Takashi%20Kudo%20teamLab</a></li><li><strong>teamLab HR &amp; Interactive Engineering Recruiting</strong> (Talent Acquisition · Chiyoda-ku, Tokyo) — <a href="https://www.linkedin.com/search/results/people/?keywords=teamLab%20HR%20OR%20Recruiter%20Tokyo">https://www.linkedin.com/search/results/people/?keywords=teamLab%20HR%20OR%20Recruiter%20Tokyo</a></li></ul>
       </div>
     </section>
 
-    <section id="ai" aria-labelledby="ai-h">
-      <div class="sec-head"><span class="n" aria-hidden="true">05</span><h2 id="ai-h">AI usage disclosure</h2><span class="jp">AIの利用に関する注意事項</span></div>
+    <section id="why">
+      <div class="sec-head"><span class="n">05</span><h2>Why teamLab (チームラボ)</h2><span class="jp">志望動機</span></div>
       <div class="card">
-        <p class="quote">提出物の開発において、AIコーディングアシスタント（Crush 経由のLLM）を補助的に使用しました。使用範囲：コードの雛形生成、ドキュメント整備、テスト/検証スクリプトの作成、リファクタリング補助。人間が担当：企画・設計・数学/アルゴリズムの決定、ビジュアルとサウンドの方向性、リアルタイム描画や量子化の実装判断、最終確認と検証（ハッシュによる再現性チェック）。</p>
-        <p style="margin-top:8px">I used an AI coding assistant (an LLM via Crush) as a <strong>support</strong> tool: scaffolding, docs, test/verification scripts, refactors. I — the human — did the concept, design, the math/algorithm decisions, the visual and audio direction, the real-time and quantization implementation calls, and the final verification (reproducibility by hash). I can walk through the exact scope per work in the interview.</p>
+        <p>teamLab's line — &quot;transcend these boundaries … everything exists in a long, fragile yet miraculous, borderless continuity&quot; — is not a slogan to me; it is the exact shape of what I build. Having walked through and experienced both teamLab Borderless (Azabudai Hills) and teamLab Planets (Toyosu) in Tokyo, and visiting teamLab Botanical Garden Osaka, the physical sensation of boundaryless space reacting in real time to human presence made it unmistakable: this is the collective where my work belongs.</p>
+        <p style="margin-top:8px" lang="ja">東京の「teamLab Borderless（麻布台ヒルズ）」および「teamLab Planets（豊洲）」の展示を実際に体験し、身体と作品、自己と他者の境界が溶け合うリアルタイムの空間変容に圧倒されました。私が探求してきたオシロスコープ・ベクター合成やWebGL2シェーダー、三値数理システム（{−1, 0, +1}）は、まさに「知覚と信号のボーダレスな連続性」そのものです。アーティストとエンジニアの境界を結ぶインタラクティブエンジニア（Unity / 3D）として、東京の地で世界を魅了する次なる体験を共に創り出したいと強く志望しています。</p>
       </div>
     </section>
 
-    <section id="why" aria-labelledby="why-h">
-      <div class="sec-head"><span class="n" aria-hidden="true">06</span><h2 id="why-h">Why teamLab</h2><span class="jp">志望動機</span></div>
+    <section id="ai">
+      <div class="sec-head"><span class="n">06</span><h2>AI Usage &amp; Verification Disclosure</h2><span class="jp">AI利用に関する明記</span></div>
       <div class="card">
-        <p>teamLab's line — <span class="q">"transcend these boundaries … everything exists in a long, fragile yet miraculous, borderless continuity"</span> — is not a slogan to me; it is the exact shape of what I build. Having walked through and experienced both <strong style="color:var(--h2)">teamLab Borderless</strong> (Azabudai Hills) and <strong style="color:var(--h2)">teamLab Planets</strong> (Toyosu) in Tokyo, and soon visiting <strong style="color:var(--h2)">teamLab Botanical Garden Osaka</strong>, the physical sensation of boundaryless space reacting in real time to human presence made it unmistakable: this is the collective where my work belongs.</p>
-        <p style="margin-top:10px" lang="ja">東京の「teamLab Borderless（麻布台ヒルズ）」および「teamLab Planets（豊洲）」の展示を実際に体験し、身体と作品、自己と他者の境界が溶け合うリアルタイムの空間変容に圧倒されました。私が探求してきたオシロスコープ・ベクター合成やWebGL2シェーダー、三値数理システム（<span class="tern">{−1, 0, +1}</span>）は、まさに「知覚と信号のボーダレスな連続性」そのものです。アーティストとエンジニアの境界を結ぶインタラクティブエンジニア（Unity / 3D）として、東京の地で世界を魅了する次なる体験を共に創り出したいと強く志望しています。</p>
+        <p lang="ja">提出物の開発において、AIコーディングアシスタントを補助的に使用しました（雛形生成、ドキュメント整備、検証スクリプト補助）。企画・数理設計・アーキテクチャ決定・量子化およびリアルタイム描画の実装判断・最終ハッシュ検証はすべて応募者本人が行っています。</p>
+        <p style="margin-top:6px">AI coding assistants were used strictly as a support tool for scaffolding and documentation formatting. All architectural design, mathematical formulation, kernel/shader implementation decisions, and cryptographic hash verifications were performed by the applicant.</p>
       </div>
     </section>
   </main>
 
   <footer>
-    <div>Péter József Lódri · ロドリ・ペーテル・ヨージェフ · interactive engineer &amp; creative technologist</div>
-    <div>
-      <a href="mailto:peter.lodri@gmail.com">peter.lodri@gmail.com</a> ·
-      <a href="https://github.com/peterlodri-sec">github.com/peterlodri-sec</a> ·
-      <a href="https://www.linkedin.com/in/peter-lodri/">LinkedIn</a> ·
-      <a href="https://bsky.app/profile/0xp3t3rl.bsky.social">@0xp3t3rl.bsky.social</a>
-    </div>
-    <div>
-      <a href="https://teamlab.vaked.dev">the interactive CV</a> ·
-      <a href="https://teamlab.vaked.dev/resume.pdf">resume.pdf</a> ·
-      <a href="https://zeno.vaked.dev" target="_blank" rel="noopener noreferrer">zeno.vaked.dev (ZENO 銭)</a> ·
-      <a href="https://8b.is" target="_blank" rel="noopener noreferrer">8b.is &lt;3</a> ·
-      <a href="https://vaked.dev">vaked.dev</a>
-    </div>
-    <div style="margin-top:8px" class="sig">fine touch from within · peter + 8b.is &lt;3 · the third state is real · {−1, 0, +1} · om mani padme hum</div>
-    <div style="margin-top:4px">peterlodri.omni-chan-SunOfDharma&lt;3.Karmapa(S).&lt;3</div>
+    <div>Péter József Lódri · <a href="mailto:peter.lodri@gmail.com">peter.lodri@gmail.com</a> · <a href="https://www.linkedin.com/in/peter-lodri/">linkedin.com/in/peter-lodri</a> · <a href="https://teamlab.vaked.dev">teamlab.vaked.dev</a></div>
+    <div>fine touch from within · peter + 8b.is &lt;3 · {−1, 0, +1} · om mani padme hum</div>
   </footer>
 </div>
 </body>

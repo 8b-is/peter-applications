@@ -1,458 +1,586 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Péter József Lódri — SOTA Career &amp; Income Application Hub (teamLab + 5 Tokyo/Global Targets)</title>
-  <meta name="description" content="Complete application command center for Péter József Lódri: teamLab Interactive Engineer ELI5 guide + PDF assets, plus 5 tailored SOTA applications (Sakana AI, Preferred Networks, TIER IV, Woven by Toyota, Taiko Labs)." />
-  <style>
-    :root {
-      --bg: #F8FAFC;
-      --card: #FFFFFF;
-      --dark: #0F172A;
-      --ink: #0F172A;
-      --secondary: #475569;
-      --muted: #64748B;
-      --accent: #2563EB;
-      --accent-hover: #1D4ED8;
-      --emerald: #059669;
-      --emerald-bg: #ECFDF5;
-      --amber: #D97706;
-      --amber-bg: #FFFBEB;
-      --border: #E2E8F0;
-      --radius: 14px;
-    }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      background: var(--bg);
-      color: var(--ink);
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, sans-serif;
-      line-height: 1.6;
-      padding-bottom: 4rem;
-    }
-    a { color: var(--accent); text-decoration: none; font-weight: 600; }
-    a:hover { text-decoration: underline; }
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Péter József Lódri — SOTA Career, Resume &amp; Subdomain Command Center (apply.vaked.dev)</title>
+<meta name="description" content="Master E2E Application Command Center for Péter József Lódri: 6 dedicated *.vaked.dev interactive sites, tailored Resume/Portfolio/Application PDFs, ELI5 guides, and 1-click LinkedIn outreach.">
+<meta name="theme-color" content="#05070e">
+<style>
+  :root{
+    --bg:#05070e;--surface:#0d111f;--ink:#eef1ff;--dim:#b5bcd9;--line:rgba(255,255,255,.12);
+    --cyan:#62e6c9;--violet:#b48bff;--phos:#39ff14;--li:#0a66c2;
+    --mono:ui-monospace,'SF Mono','JetBrains Mono',Menlo,monospace;
+    --sans:'Inter',system-ui,-apple-system,'Hiragino Sans',sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.6}
+  .constellation-bar{
+    position:sticky;top:0;z-index:50;display:flex;align-items:center;gap:8px;flex-wrap:wrap;
+    padding:10px clamp(16px,4vw,40px);background:rgba(5,7,14,.9);backdrop-filter:blur(12px);
+    border-bottom:1px solid var(--line);font-family:var(--mono);font-size:11px;
+  }
+  .cb-label{color:var(--cyan);font-weight:700;letter-spacing:.12em;margin-right:4px}
+  .cb-link{color:var(--dim);text-decoration:none;padding:4px 9px;border-radius:6px;border:1px solid transparent}
+  .cb-link:hover{color:#fff;border-color:var(--line);background:rgba(255,255,255,.05)}
+  .cb-link.active{color:#05070e;background:var(--cyan);font-weight:700}
 
-    header {
-      background: var(--dark);
-      color: #F8FAFC;
-      padding: 2.5rem 1.5rem;
-      border-bottom: 1px solid #1E293B;
-    }
-    .container {
-      max-width: 1240px;
-      margin: 0 auto;
-      padding: 0 1.25rem;
-    }
-    .kicker {
-      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-      font-size: 0.76rem;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: #38BDF8;
-      margin-bottom: 0.5rem;
-    }
-    h1 {
-      font-size: clamp(1.75rem, 3vw, 2.4rem);
-      font-weight: 800;
-      letter-spacing: -0.02em;
-      margin-bottom: 0.6rem;
-    }
-    .lead {
-      color: #CBD5E1;
-      max-width: 840px;
-      font-size: 1rem;
-      margin-bottom: 1.25rem;
-    }
-    .btn-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.6rem;
-    }
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      padding: 0.55rem 1rem;
-      border-radius: 8px;
-      font-size: 0.84rem;
-      font-weight: 600;
-      border: 1px solid var(--border);
-      background: var(--card);
-      color: var(--ink);
-      cursor: pointer;
-      text-decoration: none;
-      transition: all 0.15s ease;
-    }
-    .btn:hover { background: #F1F5F9; text-decoration: none; }
-    .btn.primary {
-      background: var(--accent);
-      border-color: var(--accent);
-      color: #FFFFFF;
-    }
-    .btn.primary:hover { background: var(--accent-hover); }
-    .btn.emerald {
-      background: var(--emerald);
-      border-color: var(--emerald);
-      color: #FFFFFF;
-    }
+  .wrap{max-width:1140px;margin:0 auto;padding:36px clamp(16px,4vw,40px) 80px}
+  header{border-bottom:1px solid var(--line);padding-bottom:28px;margin-bottom:32px}
+  .kicker{font-family:var(--mono);font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:var(--cyan)}
+  h1{font-size:clamp(30px,5vw,52px);font-weight:800;letter-spacing:-.02em;margin-top:8px}
+  .sub{color:var(--dim);font-size:15px;max-width:76ch;margin-top:8px}
+  .profile-bar{
+    display:flex;flex-wrap:wrap;gap:10px;margin-top:18px;font-family:var(--mono);font-size:12px;
+  }
+  .btn{
+    font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;
+    padding:9px 13px;border-radius:6px;border:1px solid var(--line);background:rgba(255,255,255,.04);
+    color:var(--ink);text-decoration:none;cursor:pointer;display:inline-flex;align-items:center;gap:6px;
+  }
+  .btn:hover{border-color:var(--cyan);color:#fff;background:rgba(98,230,201,.12)}
+  .btn.p{border-color:var(--c-accent,var(--cyan));background:color-mix(in srgb, var(--c-accent,var(--cyan)) 16%, transparent);color:#fff;font-weight:700}
+  .btn.li{border-color:#0a66c2;background:rgba(10,102,194,.22);color:#d4ebff}
+  .btn.li:hover{background:rgba(10,102,194,.38);border-color:#4ea3ff}
 
-    .section-title {
-      margin: 2.25rem 0 1rem;
-      font-size: 1.35rem;
-      font-weight: 800;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-    }
-    .badge {
-      font-size: 0.74rem;
-      font-weight: 700;
-      padding: 0.22rem 0.65rem;
-      border-radius: 999px;
-      background: var(--emerald-bg);
-      color: var(--emerald);
-    }
-    .badge.amber {
-      background: var(--amber-bg);
-      color: var(--amber);
-    }
+  .matrix-table{width:100%;border-collapse:collapse;margin-bottom:36px;font-size:13px;background:var(--surface);border-radius:12px;overflow:hidden;border:1px solid var(--line)}
+  .matrix-table th,.matrix-table td{padding:11px 13px;border-bottom:1px solid var(--line);text-align:left;vertical-align:middle}
+  .matrix-table th{font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--cyan);background:rgba(255,255,255,.03)}
+  .matrix-table a{color:var(--cyan);text-decoration:none;font-family:var(--mono);font-size:12px}
+  .matrix-table a:hover{text-decoration:underline}
 
-    .grid-2 {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1.25rem;
-    }
-    @media (max-width: 920px) {
-      .grid-2 { grid-template-columns: 1fr; }
-    }
-
-    .card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 1.5rem;
-      box-shadow: 0 2px 6px rgba(15, 23, 42, 0.04);
-      margin-bottom: 1.25rem;
-    }
-    .card h3 {
-      font-size: 1.12rem;
-      margin-bottom: 0.35rem;
-    }
-    .meta {
-      font-size: 0.82rem;
-      color: var(--muted);
-      margin-bottom: 0.85rem;
-      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-    }
-    .eli5-box {
-      background: #F8FAFC;
-      border-left: 3px solid var(--accent);
-      padding: 0.75rem 1rem;
-      border-radius: 0 8px 8px 0;
-      font-size: 0.88rem;
-      color: var(--secondary);
-      margin-bottom: 1rem;
-    }
-    pre {
-      background: #0F172A;
-      color: #E2E8F0;
-      padding: 0.9rem;
-      border-radius: 10px;
-      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-      font-size: 0.78rem;
-      overflow-x: auto;
-      line-height: 1.5;
-      margin: 0.65rem 0;
-      white-space: pre-wrap;
-    }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 0.86rem;
-      margin: 0.75rem 0;
-    }
-    th, td {
-      border-bottom: 1px solid var(--border);
-      padding: 0.65rem 0.5rem;
-      text-align: left;
-    }
-    th {
-      font-size: 0.74rem;
-      text-transform: uppercase;
-      color: var(--muted);
-    }
-    footer {
-      margin-top: 3rem;
-      padding-top: 1.5rem;
-      border-top: 1px solid var(--border);
-      font-size: 0.82rem;
-      color: var(--muted);
-      text-align: center;
-    }
-  </style>
+  .card{
+    background:var(--surface);border:1px solid var(--line);border-top:3px solid var(--c-accent,var(--cyan));
+    border-radius:14px;padding:24px;margin-bottom:26px;
+  }
+  .card-head{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;flex-wrap:wrap;margin-bottom:16px}
+  .badge{font-family:var(--mono);font-size:11px;color:var(--c-accent,var(--cyan));letter-spacing:.12em;text-transform:uppercase}
+  .card h2{font-size:24px;margin-top:4px}
+  .card h2 a{color:#fff;text-decoration:none}
+  .card h2 a:hover{color:var(--c-accent,var(--cyan))}
+  .role-line{color:var(--dim);font-size:14px;margin-top:2px}
+  .subdomain-pill{
+    font-family:var(--mono);font-size:12px;font-weight:700;color:#05070e;
+    background:var(--c-accent,var(--cyan));padding:8px 14px;border-radius:8px;text-decoration:none;
+  }
+  .btn-row{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}
+  .li-contacts-box{
+    background:rgba(255,255,255,.025);border:1px solid var(--line);border-radius:10px;
+    padding:12px 16px;margin-bottom:16px;font-size:13px;
+  }
+  .box-title{font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:.14em;color:var(--c-sec,var(--violet));margin-bottom:6px}
+  .li-contacts-box ul{padding-left:18px;display:grid;gap:4px}
+  .li-contacts-box a{color:var(--cyan);text-decoration:none}
+  .li-contacts-box a:hover{text-decoration:underline}
+  .copy-grid{display:grid;gap:14px;grid-template-columns:1fr}
+  @media(min-width:860px){.copy-grid{grid-template-columns:1fr 1fr}}
+  .copy-col{background:rgba(0,0,0,.35);border:1px solid var(--line);border-radius:10px;padding:12px}
+  .copy-top{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:8px;font-family:var(--mono);font-size:11px;color:var(--dim)}
+  pre{font-family:var(--mono);font-size:12px;color:#e6ebff;white-space:pre-wrap;line-height:1.55;max-height:210px;overflow:auto;padding:8px;background:rgba(4,6,12,.8);border-radius:6px}
+  footer{margin-top:48px;padding-top:24px;border-top:1px solid var(--line);font-family:var(--mono);font-size:12px;color:var(--dim);line-height:2}
+  footer a{color:var(--cyan);text-decoration:none}
+</style>
 </head>
 <body>
-
+<nav class="constellation-bar" aria-label="Application Subdomain Network">
+    <span class="cb-label">SOTA CAREER NETWORK:</span>
+    <a href="https://apply.vaked.dev" class="cb-link active">00 Hub (apply.vaked.dev)</a><a href="https://teamlab.vaked.dev" class="cb-link">01 teamLab</a><a href="https://sakana.vaked.dev" class="cb-link">02 Sakana AI</a><a href="https://pfn.vaked.dev" class="cb-link">03 Preferred Networks</a><a href="https://tier4.vaked.dev" class="cb-link">04 TIER IV</a><a href="https://woven.vaked.dev" class="cb-link">05 Woven by Toyota</a><a href="https://taiko.vaked.dev" class="cb-link">06 Taiko Labs</a>
+  </nav>
+<div class="wrap">
   <header>
-    <div class="container">
-      <div class="kicker">8b-is / peter-applications • Tokyo &amp; Global Remote Career Command Center</div>
-      <h1>Péter József Lódri — SOTA Applications &amp; Asset Pack</h1>
-      <p class="lead">
-        Complete plain-English (ELI5) submission guide and verified PDF assets for <strong>teamLab (Tokyo)</strong>, plus <strong>5 high-compensation SOTA engineering applications</strong> tailored to your exact Rust, GPU/Metal quantization, real-time CG/WebGL2, and verifiable systems portfolio.
-      </p>
-      <div class="btn-row">
-        <a class="btn primary" href="teamlab/lodri-resume.pdf" download>📄 Download Rirekisho / CV (lodri-resume.pdf)</a>
-        <a class="btn emerald" href="teamlab/lodri-portfolio.pdf" download>🎨 Download Portfolio PDF (lodri-portfolio.pdf)</a>
-        <a class="btn" href="teamlab/lodri-teamlab-application.pdf" download>📦 Full teamLab Dossier PDF</a>
-        <a class="btn" href="resumes/cv-peter-lodri-taiko.pdf" download>🔐 Download Rust/Protocol CV (cv-peter-lodri-taiko.pdf)</a>
-        <a class="btn" href="https://teamlab.vaked.dev" target="_blank" rel="noopener">🌐 Live Interactive CV (teamlab.vaked.dev)</a>
-      </div>
+    <div class="kicker">E2E SOTA CAREER &amp; INCOME COMMAND CENTER · 6 DEDICATED *.VAKED.DEV SUBDOMAINS</div>
+    <h1>Péter József Lódri (ロドリ・ペーテル・ヨージェフ)</h1>
+    <p class="sub">Every target company below has its own dedicated live Cloudflare Worker subdomain (<code>*.vaked.dev</code>) with a bespoke 60fps interactive canvas CV, tailored <code>resume.pdf</code>, <code>portfolio.pdf</code>, <code>application.pdf</code>, plain-English ELI5 guide, and 1-click LinkedIn outreach kit.</p>
+    <div class="profile-bar">
+      <a class="btn li" href="https://www.linkedin.com/in/peter-lodri/" target="_blank" rel="noopener noreferrer">LinkedIn: in/peter-lodri ↗</a>
+      <a class="btn" href="https://github.com/peterlodri-sec" target="_blank" rel="noopener noreferrer">github.com/peterlodri-sec ↗</a>
+      <a class="btn" href="https://github.com/8b-is" target="_blank" rel="noopener noreferrer">github.com/8b-is ↗</a>
+      <a class="btn" href="https://github.com/osaurus-ai/osaurus" target="_blank" rel="noopener noreferrer">OSS Architect: osaurus-ai/osaurus ↗</a>
+      <a class="btn" href="https://github.com/simplifaisoul/osiris" target="_blank" rel="noopener noreferrer">OSS Architect: simplifaisoul/osiris ↗</a>
+      <a class="btn" href="https://github.com/headroomlabs-ai/headroom/pull/1418" target="_blank" rel="noopener noreferrer">headroom PR #1418 ↗</a>
+      <a class="btn" href="mailto:peter.lodri@gmail.com">peter.lodri@gmail.com ✉</a>
     </div>
   </header>
 
-  <main class="container">
+  <table class="matrix-table">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Company &amp; Role</th>
+        <th>Dedicated Subdomain</th>
+        <th>Tailored PDFs</th>
+        <th>LinkedIn &amp; Portal</th>
+      </tr>
+    </thead>
+    <tbody>
+      
+      <tr>
+        <td><strong>01</strong></td>
+        <td><strong>teamLab (チームラボ)</strong><br><span style="color:var(--dim);font-size:12px">インタラクティブエンジニア（Unity / 3D） · Interactive Engineer &amp; Catalyst (¥7,000,000 – ¥12,000,000+ JPY)</span></td>
+        <td><a href="https://teamlab.vaked.dev" target="_blank" rel="noopener noreferrer">https://teamlab.vaked.dev ↗</a></td>
+        <td>
+          <a href="https://teamlab.vaked.dev/resume.pdf" target="_blank">resume.pdf</a> ·
+          <a href="https://teamlab.vaked.dev/portfolio.pdf" target="_blank">portfolio.pdf</a> ·
+          <a href="https://teamlab.vaked.dev/application.pdf" target="_blank">application.pdf</a>
+        </td>
+        <td>
+          <a href="https://www.linkedin.com/company/teamlab/" target="_blank">LinkedIn</a> ·
+          <a href="https://www.linkedin.com/search/results/people/?keywords=teamLab%20%28Recruiter%20OR%20Talent%20OR%20HR%20OR%20Catalyst%20OR%20Interactive%20Engineer%29" target="_blank">Recruiters</a> ·
+          <a href="https://www.team-lab.com/recruit/" target="_blank">Portal ↗</a>
+        </td>
+      </tr>
+      <tr>
+        <td><strong>02</strong></td>
+        <td><strong>Sakana AI (サカナAI)</strong><br><span style="color:var(--dim);font-size:12px">AI Systems &amp; Multi-GPU Infrastructure Engineer (Low-Bit Inference &amp; Agentic Swarms) (¥15,000,000 – ¥28,000,000+ JPY + Equity)</span></td>
+        <td><a href="https://sakana.vaked.dev" target="_blank" rel="noopener noreferrer">https://sakana.vaked.dev ↗</a></td>
+        <td>
+          <a href="https://sakana.vaked.dev/resume.pdf" target="_blank">resume.pdf</a> ·
+          <a href="https://sakana.vaked.dev/portfolio.pdf" target="_blank">portfolio.pdf</a> ·
+          <a href="https://sakana.vaked.dev/application.pdf" target="_blank">application.pdf</a>
+        </td>
+        <td>
+          <a href="https://www.linkedin.com/company/sakana-ai/" target="_blank">LinkedIn</a> ·
+          <a href="https://www.linkedin.com/search/results/people/?keywords=Sakana%20AI%20%28Recruiter%20OR%20Talent%20OR%20Engineer%20OR%20Founder%29" target="_blank">Recruiters</a> ·
+          <a href="https://sakana.ai/careers/" target="_blank">Portal ↗</a>
+        </td>
+      </tr>
+      <tr>
+        <td><strong>03</strong></td>
+        <td><strong>Preferred Networks (PFN · プリファードネットワークス)</strong><br><span style="color:var(--dim);font-size:12px">Senior Rust Systems &amp; Custom AI Accelerator Engineer (MN-Core / PLaMo / Rustuna) (¥12,000,000 – ¥22,000,000+ JPY)</span></td>
+        <td><a href="https://pfn.vaked.dev" target="_blank" rel="noopener noreferrer">https://pfn.vaked.dev ↗</a></td>
+        <td>
+          <a href="https://pfn.vaked.dev/resume.pdf" target="_blank">resume.pdf</a> ·
+          <a href="https://pfn.vaked.dev/portfolio.pdf" target="_blank">portfolio.pdf</a> ·
+          <a href="https://pfn.vaked.dev/application.pdf" target="_blank">application.pdf</a>
+        </td>
+        <td>
+          <a href="https://www.linkedin.com/company/preferred-networks/" target="_blank">LinkedIn</a> ·
+          <a href="https://www.linkedin.com/search/results/people/?keywords=Preferred%20Networks%20%28Recruiter%20OR%20Talent%20OR%20HR%20OR%20MN-Core%20OR%20PLaMo%29" target="_blank">Recruiters</a> ·
+          <a href="https://www.preferred.jp/en/careers/" target="_blank">Portal ↗</a>
+        </td>
+      </tr>
+      <tr>
+        <td><strong>04</strong></td>
+        <td><strong>TIER IV (ティアフォー · Autoware)</strong><br><span style="color:var(--dim);font-size:12px">Senior Rust Systems &amp; Real-Time Edge GPU Engineer (Autoware Autonomous Driving OS) (¥10,000,000 – ¥18,000,000+ JPY)</span></td>
+        <td><a href="https://tier4.vaked.dev" target="_blank" rel="noopener noreferrer">https://tier4.vaked.dev ↗</a></td>
+        <td>
+          <a href="https://tier4.vaked.dev/resume.pdf" target="_blank">resume.pdf</a> ·
+          <a href="https://tier4.vaked.dev/portfolio.pdf" target="_blank">portfolio.pdf</a> ·
+          <a href="https://tier4.vaked.dev/application.pdf" target="_blank">application.pdf</a>
+        </td>
+        <td>
+          <a href="https://www.linkedin.com/company/tier-iv/" target="_blank">LinkedIn</a> ·
+          <a href="https://www.linkedin.com/search/results/people/?keywords=TIER%20IV%20%28Recruiter%20OR%20Talent%20OR%20Autoware%20OR%20Rust%29" target="_blank">Recruiters</a> ·
+          <a href="https://tier4.co.jp/en/careers" target="_blank">Portal ↗</a>
+        </td>
+      </tr>
+      <tr>
+        <td><strong>05</strong></td>
+        <td><strong>Woven by Toyota (ウーブン・バイ・トヨタ)</strong><br><span style="color:var(--dim);font-size:12px">Senior Systems Software Engineer — Rust, Simulation &amp; Accelerated ML Platform (Arene SDV) (¥12,000,000 – ¥22,000,000+ JPY)</span></td>
+        <td><a href="https://woven.vaked.dev" target="_blank" rel="noopener noreferrer">https://woven.vaked.dev ↗</a></td>
+        <td>
+          <a href="https://woven.vaked.dev/resume.pdf" target="_blank">resume.pdf</a> ·
+          <a href="https://woven.vaked.dev/portfolio.pdf" target="_blank">portfolio.pdf</a> ·
+          <a href="https://woven.vaked.dev/application.pdf" target="_blank">application.pdf</a>
+        </td>
+        <td>
+          <a href="https://www.linkedin.com/company/wovenbytoyota/" target="_blank">LinkedIn</a> ·
+          <a href="https://www.linkedin.com/search/results/people/?keywords=%22Woven%20by%20Toyota%22%20%28Recruiter%20OR%20Talent%20OR%20Arene%20OR%20Simulation%20OR%20Rust%29" target="_blank">Recruiters</a> ·
+          <a href="https://woven.toyota/en/careers" target="_blank">Portal ↗</a>
+        </td>
+      </tr>
+      <tr>
+        <td><strong>06</strong></td>
+        <td><strong>Taiko Labs (Based Ethereum ZK-Rollup)</strong><br><span style="color:var(--dim);font-size:12px">Senior Rust Protocol &amp; Verifiable Compute Engineer (Based Rollups &amp; Multi-Proof Prover Infrastructure) ($160,000 – $240,000+ USD + Token/Equity)</span></td>
+        <td><a href="https://taiko.vaked.dev" target="_blank" rel="noopener noreferrer">https://taiko.vaked.dev ↗</a></td>
+        <td>
+          <a href="https://taiko.vaked.dev/resume.pdf" target="_blank">resume.pdf</a> ·
+          <a href="https://taiko.vaked.dev/portfolio.pdf" target="_blank">portfolio.pdf</a> ·
+          <a href="https://taiko.vaked.dev/application.pdf" target="_blank">application.pdf</a>
+        </td>
+        <td>
+          <a href="https://www.linkedin.com/company/taikoxyz/" target="_blank">LinkedIn</a> ·
+          <a href="https://www.linkedin.com/search/results/people/?keywords=Taiko%20%28Recruiter%20OR%20Talent%20OR%20Brecht%20OR%20Daniel%20OR%20Rust%29" target="_blank">Recruiters</a> ·
+          <a href="https://taiko.xyz" target="_blank">Portal ↗</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 
-    <!-- PART 1: TEAMLAB ELI5 + ASSETS -->
-    <div class="section-title">
-      <span>01. Primary Target: teamLab (Tokyo) — ELI5 Guide &amp; Copy-Paste Form Kit</span>
-      <span class="badge">Ready to Submit • 履歴書・職務経歴書 Verified</span>
-    </div>
-
-    <div class="card">
-      <h3>teamLab — Interactive Engineer (Unity / 3D / Real-Time CG) &amp; Catalyst</h3>
-      <div class="meta">Location: Chiyoda-ku, Tokyo • Portal: https://www.team-lab.com/recruit/ • Band: ¥7M–¥12M+ JPY</div>
-
-      <div class="eli5-box">
-        <strong>ELI5 ("Explain Like I'm 5") — How This Application Works:</strong><br/>
-        1. <strong>What an Interactive Engineer does at teamLab:</strong> Writes the real-time shaders, physics, audio synthesis, and sensor math so giant museum rooms (like <em>Borderless</em> in Azabudai Hills and <em>Planets</em> in Toyosu) react at 60fps when visitors touch the walls.<br/>
-        2. <strong>Why your portfolio wins immediately:</strong> Instead of a static PDF alone, your portfolio (<a href="https://teamlab.vaked.dev" target="_blank"><code>https://teamlab.vaked.dev</code></a>) <em>is itself</em> a live, zero-dependency real-time WebGL2 + Web Audio installation running in the browser.<br/>
-        3. <strong>Which PDF to upload:</strong> Upload <a href="teamlab/lodri-resume.pdf" download><code>teamlab/lodri-resume.pdf</code></a> into the mandatory <code>履歴書 / 職務経歴書</code> box, and paste the pre-verified Japanese answers below!
+  <main>
+    
+    <article class="card" id="card-teamlab" style="--c-accent:#62e6c9;--c-sec:#b48bff">
+      <div class="card-head">
+        <div>
+          <span class="badge">#01 · Chiyoda-ku, Tokyo (千代田区・小川町) · ¥7,000,000 – ¥12,000,000+ JPY</span>
+          <h2><a href="https://teamlab.vaked.dev" target="_blank" rel="noopener noreferrer">teamLab (チームラボ)</a></h2>
+          <div class="role-line">インタラクティブエンジニア（Unity / 3D） · Interactive Engineer &amp; Catalyst</div>
+        </div>
+        <a class="subdomain-pill" href="https://teamlab.vaked.dev" target="_blank" rel="noopener noreferrer">🌐 https://teamlab.vaked.dev ↗</a>
       </div>
 
-      <table>
-        <thead>
-          <tr>
-            <th>Form Field (Japanese / English)</th>
-            <th>Exact Value to Paste / Upload</th>
-            <th>Action</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><strong>希望職種 (Target Role)</strong></td>
-            <td><code>インタラクティブエンジニア（Unity / 3D）</code> (Secondary: <code>Catalyst</code>)</td>
-            <td><button class="btn" onclick="copyText('インタラクティブエンジニア（Unity / 3D）', this)">Copy</button></td>
-          </tr>
-          <tr>
-            <td><strong>名前 (Name as on Passport)</strong></td>
-            <td><code>LODRI PETER JOZSEF</code> (Peter József Lódri · ロドリ・ペーテル・ヨージェフ)</td>
-            <td><button class="btn" onclick="copyText('LODRI PETER JOZSEF', this)">Copy</button></td>
-          </tr>
-          <tr>
-            <td><strong>メールアドレス (Email)</strong></td>
-            <td><code>peter.lodri@gmail.com</code></td>
-            <td><button class="btn" onclick="copyText('peter.lodri@gmail.com', this)">Copy</button></td>
-          </tr>
-          <tr>
-            <td><strong>履歴書 / 職務経歴書 (Resume Upload)</strong></td>
-            <td>Upload <a href="teamlab/lodri-resume.pdf" download><code>teamlab/lodri-resume.pdf</code></a> (1.8 MB)</td>
-            <td><a class="btn primary" href="teamlab/lodri-resume.pdf" download>Download PDF</a></td>
-          </tr>
-          <tr>
-            <td><strong>制作実績 / ポートフォリオ URL</strong></td>
-            <td><code>https://teamlab.vaked.dev</code></td>
-            <td><button class="btn" onclick="copyText('https://teamlab.vaked.dev', this)">Copy</button></td>
-          </tr>
-          <tr>
-            <td><strong>コーディング能力がわかるもの URL</strong></td>
-            <td><code>https://github.com/peterlodri-sec</code></td>
-            <td><button class="btn" onclick="copyText('https://github.com/peterlodri-sec', this)">Copy</button></td>
-          </tr>
-          <tr>
-            <td><strong>AIの利用に関する注意事項 (AI Disclosure)</strong></td>
-            <td><span style="font-size:0.78rem;">提出物の開発において、AIコーディングアシスタント（Crush 経由のLLM）を補助的に使用しました。使用範囲：コードの雛形生成、ドキュメント整備、テスト/検証スクリプトの作成、リファクタリング補助。人間（応募者本人）が担当：企画・設計・数理/アルゴリズムの決定、ビジュアルとサウンドのディレクション、リアルタイム描画や量子化の実装判断、最終確認と検証（ハッシュによる再現性チェック）。</span></td>
-            <td><button class="btn" onclick="copyText('提出物の開発において、AIコーディングアシスタント（Crush 経由のLLM）を補助的に使用しました。使用範囲：コードの雛形生成、ドキュメント整備、テスト/検証スクリプトの作成、リファクタリング補助。人間（応募者本人）が担当：企画・設計・数理/アルゴリズムの決定、ビジュアルとサウンドのディレクション、リアルタイム描画や量子化の実装判断、最終確認と検証（ハッシュによる再現性チェック）。各作品ごとの詳細な設計意図や実装背景については、面接時にソースコードを交えて直接ご説明可能です。', this)">Copy JP</button></td>
-          </tr>
-          <tr>
-            <td><strong>展示体験の有無 (Seen Exhibition?)</strong></td>
-            <td><span style="font-size:0.78rem;">はい。東京にて「teamLab Borderless（麻布台ヒルズ）」および「teamLab Planets（豊洲）」を実際に体験しました。光、音、空間、そして鑑賞者の身体の動きが境界なく混ざり合う「ボーダレス」の世界に深く圧倒され、自らのリアルタイムCG・音響ベクター合成技術を投じてこの空間創造を牽引したいと確信しています。</span></td>
-            <td><button class="btn" onclick="copyText('はい（実際に体験しました）。東京にて「teamLab Borderless（麻布台ヒルズ）」および「teamLab Planets（豊洲）」を実際に体験しました。また、近々「チームラボ ボタニカルガーデン 大阪」にも訪れる予定です。光、音、空間、そして鑑賞者の身体の動きが境界なく混ざり合い、他者の存在によってリアルタイムにアート空間が変容していく「ボーダレス（境界のない連続性）」の世界に深く圧倒されました。自らのリアルタイムCG・音響ベクター合成・Unityエンジニアリング技術を投じ、この体験の創造をエンジニアとして牽引したいと確信しています。', this)">Copy JP</button></td>
-          </tr>
-        </tbody>
-      </table>
-
-      <div class="btn-row" style="margin-top:0.85rem;">
-        <a class="btn primary" href="https://www.team-lab.com/recruit/" target="_blank" rel="noopener">🚀 Open teamLab Recruit Portal</a>
-        <a class="btn" href="teamlab/ELI5-TEAMLAB-APPLICATION-GUIDE.md">📖 Read Full ELI5 teamLab Guide</a>
-        <a class="btn" href="teamlab/application.md">📋 View All Japanese/English Answers</a>
-      </div>
-    </div>
-
-    <!-- PART 2: 5 MORE SOTA PETER-OMNI RELEVANT JOBS -->
-    <div class="section-title">
-      <span>02. Five Additional SOTA Peter-Omni Target Applications (High-Income Tokyo &amp; Global Remote)</span>
-      <span class="badge amber">¥10M–¥28M+ JPY / $160k–$240k+ USD</span>
-    </div>
-
-    <div class="grid-2">
-      <!-- Target 2: Sakana AI -->
-      <div class="card">
-        <div style="display:flex; justify-content:space-between; align-items:flex-start;">
-          <h3>#02 — Sakana AI (Tokyo, Minato-ku)</h3>
-          <span class="badge">¥15M–¥28M+ JPY + Equity</span>
-        </div>
-        <div class="meta">Role: AI Systems &amp; Multi-GPU Infrastructure Engineer • Apply: sakana.ai/careers</div>
-        <div class="eli5-box">
-          <strong>ELI5 Fit:</strong> Tokyo's premier AI unicorn builds nature-inspired evolutionary model swarms and autonomous AI Scientists. Your <code>BitNet b1.58</code> ternary quantization (<code>MLX-QUANT</code>, <code>pureQTern</code>), <code>cogito</code> <code>BFP-64</code> bitplane kernels, and <code>AgentField</code> multi-reasoner orchestration match their core R&amp;D needs.
-        </div>
-        <pre id="cov-sakana">Subject: Application: AI Systems & Low-Bit Inference Engineer — Péter József Lódri (Rust / Metal & GPU Kernels / Multi-Agent Systems, Tokyo)
-
-Dear Sakana AI Hiring Team,
-
-I am a Tokyo-based Principal Systems Engineer & Independent Researcher (8+ years across ASAPP, Plandek, Virality Data, and DailyWire) applying for AI Systems & Infrastructure Engineering at Sakana AI.
-
-1. Low-Bit Ternary Quantization & Custom GPU Kernels (MLX-QUANT & pureQTern): Built zero-dependency C and Rust inference engines and Apple Silicon Metal GPU kernels for BitNet b1.58 ({-1, 0, +1}) models (12.80x compression over FP16 with bit-exact CPU/GPU parity).
-2. Deterministic Sub-Millisecond Kernels (8b-is/cogito): Engineered BFP-64 (64-trit POPCNT bitplanes) and zero-float-drift rational lattices executing 1M integer square-root evaluations in 5.52 ms.
-3. High-Throughput Distributed & Agentic Systems: Cut Fortune-100 AI latency by 50–70% at ASAPP; built `#![no_std]` verifiable memory ledgers (`mem-16-10`).
-
-GitHub: https://github.com/peterlodri-sec | Portfolio: https://teamlab.vaked.dev
-Péter József Lódri | peter.lodri@gmail.com | +36 20 391 5161</pre>
-        <div class="btn-row">
-          <button class="btn primary" onclick="copyEl('cov-sakana', this)">📋 Copy Cover Letter</button>
-          <a class="btn" href="https://sakana.ai/careers/" target="_blank" rel="noopener">↗ Open Sakana AI Careers</a>
-          <a class="btn" href="applications/02-sakana-ai-systems-rust-gpu-tokyo.md">Full Packet</a>
-        </div>
-      </div>
-
-      <!-- Target 3: Preferred Networks -->
-      <div class="card">
-        <div style="display:flex; justify-content:space-between; align-items:flex-start;">
-          <h3>#03 — Preferred Networks / PFN (Tokyo, Otemachi)</h3>
-          <span class="badge">¥12M–¥22M+ JPY</span>
-        </div>
-        <div class="meta">Role: Senior Rust Systems &amp; AI Accelerator Engineer (MN-Core / PLaMo)</div>
-        <div class="eli5-box">
-          <strong>ELI5 Fit:</strong> PFN builds Japan's custom AI supercomputer chips (<code>MN-Core</code>), foundation models (<code>PLaMo</code>), and Rust ML engines (<code>Rustuna</code>). Your <code>BFP-64</code> POPCNT dot-product bitplanes, <code>wupz</code> 5-trits/byte codec, and Python-to-Rust/Go modernization history are a direct hit.
-        </div>
-        <pre id="cov-pfn">Dear Preferred Networks Engineering Team,
-
-I am applying for Senior Systems / AI Infrastructure Engineer at Preferred Networks in Tokyo. Over the past 8+ years, I have built high-throughput distributed backends and low-level Rust/C/Swift compute engines focused on low-bit quantization and hardware-accelerated inference:
-
-1. Bitplane Quantization & Hardware Kernels (cogito, pureQTern): Built dependency-free C and `#![no_std]` Rust inference runtimes for 1.58-bit ternary models using two-plane 64-trit POPCNT dot products (BFP-64) and Metal GPU parity gates.
-2. Zero-Float-Drift Arithmetic (mem-16-10 & cogito): Exact rational phase accumulators over Z_{2^32} running 9B steps with zero float drift and 5.52ms/1M-call CLZ-seeded integer math.
-3. Python-to-Systems Modernization: Repeatedly replaced Python/JVM bottlenecks with Rust and Go services across fintech and enterprise AI.
-
-GitHub: https://github.com/8b-is/cogito & https://github.com/peterlodri-sec
-Péter József Lódri | peter.lodri@gmail.com | +36 20 391 5161</pre>
-        <div class="btn-row">
-          <button class="btn primary" onclick="copyEl('cov-pfn', this)">📋 Copy Cover Letter</button>
-          <a class="btn" href="https://www.preferred.jp/en/careers/" target="_blank" rel="noopener">↗ Open PFN Careers</a>
-          <a class="btn" href="applications/03-preferred-networks-pfn-rust-accelerator-tokyo.md">Full Packet</a>
-        </div>
-      </div>
-
-      <!-- Target 4: TIER IV -->
-      <div class="card">
-        <div style="display:flex; justify-content:space-between; align-items:flex-start;">
-          <h3>#04 — TIER IV (Tokyo, Shinagawa)</h3>
-          <span class="badge">¥10M–¥18M+ JPY</span>
-        </div>
-        <div class="meta">Role: Senior Rust Systems &amp; Real-Time Edge GPU Engineer (Autoware AD)</div>
-        <div class="eli5-box">
-          <strong>ELI5 Fit:</strong> Creator of <strong>Autoware</strong> (open-source self-driving OS). Autonomous vehicles require zero-allocation, deterministic real-time Rust and corruption-proof telemetry — matching your <code>#![no_std]</code> Rust crates (<code>cogito</code>, <code>mem-16-10</code>) and <code>pos &amp; neg == 0</code> bit-flip sanitizers.
-        </div>
-        <pre id="cov-tier4">Dear TIER IV Engineering Recruitment Team,
-
-I am applying for Senior Rust Systems & Edge Infrastructure Engineer at TIER IV in Tokyo. My focus is deterministic, zero-allocation Rust systems, real-time telemetry pipelines, and GPU-accelerated inference:
-
-1. `#![no_std]` Zero-Allocation Rust & Real-Time Caps (`cogito` & `mem-16-10`): Authored pure `#![no_std]` Rust libraries with zero heap allocations, deterministic Z_{2^32} phase locking, and O(1) bitwise adversarial bit-flip sanitizers (`pos & neg == 0`).
-2. High-Throughput Telemetry & Mesh Networking (`8b-is-engine`): Engineered WebSocket + QUIC mesh relays with deterministic frame boundaries and BLAKE3 + Ed25519 replay ledgers.
-3. Reproducible Multi-Arch Fleet (`nix-base`): Declarative x86_64 + aarch64 NixOS infrastructure with automated canary verification.
-
-GitHub: https://github.com/peterlodri-sec & https://github.com/8b-is/cogito
-Péter József Lódri | peter.lodri@gmail.com | +36 20 391 5161</pre>
-        <div class="btn-row">
-          <button class="btn primary" onclick="copyEl('cov-tier4', this)">📋 Copy Cover Letter</button>
-          <a class="btn" href="https://tier4.co.jp/en/careers" target="_blank" rel="noopener">↗ Open TIER IV Careers</a>
-          <a class="btn" href="applications/04-tier-iv-autoware-rust-edge-gpu-tokyo.md">Full Packet</a>
-        </div>
-      </div>
-
-      <!-- Target 5: Woven by Toyota -->
-      <div class="card">
-        <div style="display:flex; justify-content:space-between; align-items:flex-start;">
-          <h3>#05 — Woven by Toyota (Tokyo, Nihonbashi)</h3>
-          <span class="badge">¥12M–¥22M+ JPY</span>
-        </div>
-        <div class="meta">Role: Senior Systems Software Engineer — Rust, Simulation &amp; ML Platform</div>
-        <div class="eli5-box">
-          <strong>ELI5 Fit:</strong> English-primary Tokyo headquarters building Toyota's <strong>Arene</strong> vehicle OS and <strong>Woven City</strong>. Combines your high-concurrency Go/Rust backend leadership (110k concurrent users at DailyWire, 50–70% latency cut at ASAPP) with real-time 3D/WebGL2 simulation visualizers.
-        </div>
-        <pre id="cov-woven">Dear Woven by Toyota Recruiting & Engineering Team,
-
-I am applying for Senior Systems Software Engineer (Rust / ML Platform & Simulation Infrastructure) at Woven by Toyota in Tokyo:
-
-1. High-Concurrency Streaming & Low-Latency Distributed Systems: Cut Fortune-100 AI response latency by 50–70% at ASAPP; led the Go backend team serving 110,000+ concurrent live video/chat users at DailyWire.
-2. Safe Systems Programming in Rust: Built zero-dependency Rust workspaces (`cogito`, `mem-16-10`, `zenUltraCooker`) with fixed-size binary witnesses and cross-platform verification gates.
-3. Real-Time Browser & Shader Visualization (`teamlab.vaked.dev`, `viz.vaked.dev`): Zero-dependency WebGL2 and procedural audio simulation surfaces running at 60fps.
-
-GitHub: https://github.com/peterlodri-sec | Live Portfolio: https://teamlab.vaked.dev
-Péter József Lódri | peter.lodri@gmail.com | +36 20 391 5161</pre>
-        <div class="btn-row">
-          <button class="btn primary" onclick="copyEl('cov-woven', this)">📋 Copy Cover Letter</button>
-          <a class="btn" href="https://woven.toyota/en/careers" target="_blank" rel="noopener">↗ Open Woven Careers</a>
-          <a class="btn" href="applications/05-woven-by-toyota-rust-simulation-platform-tokyo.md">Full Packet</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- Target 6: Taiko Labs -->
-    <div class="card">
-      <div style="display:flex; justify-content:space-between; align-items:flex-start;">
-        <h3>#06 — Taiko Labs / Sovereign ZK &amp; Based Rollup Protocol (Global Remote from Tokyo)</h3>
-        <span class="badge">$160,000 – $240,000+ USD (Remote)</span>
-      </div>
-      <div class="meta">Role: Senior Rust Protocol &amp; Verifiable Compute Engineer • Dedicated Resume: resumes/cv-peter-lodri-taiko.pdf</div>
-      <div class="eli5-box">
-        <strong>ELI5 Fit:</strong> Taiko builds a decentralized Ethereum Layer-2 rollup in Rust and Go where every state transition is cryptographically proved. You already have a tailored Taiko CV (<a href="resumes/cv-peter-lodri-taiko.pdf" download><code>cv-peter-lodri-taiko.pdf</code></a>), plus <code>ZENO (銭・禅・善)</code> double-entry SHA-256/BLAKE3 ledgers, <code>mem-16-10</code>, and 32-byte <code>WupzWitness32</code> ABI receipts.
-      </div>
-      <pre id="cov-taiko">Dear Taiko Labs Protocol & Engineering Team,
-
-I am a Rust and Go systems engineer focused on verifiable computation, cryptographic provenance, and distributed node infrastructure ("Prove it, don't assert it"):
-
-1. Hash-Verified Ledgers & Cryptographic Receipts (`mem-16-10`, `ZENO`, `cogito`): Built `#![no_std]` zero-alloc Rust verifiable memory ledgers enforcing monotonic state transitions, BLAKE3/SHA-256 hash chaining, Ed25519 signed receipts, and 32-byte fixed-layout ABI v1 witnesses (`WupzWitness32`).
-2. Production Go & Rust Distributed Infrastructure: 8+ years shipping mission-critical Go, Rust, and Python backends (ASAPP, DailyWire, Cygnet) plus operating a self-hosted 30+ service NixOS fleet (`nix-base`).
-
-Tailored CV: https://github.com/8b-is/peter-applications/blob/main/resumes/cv-peter-lodri-taiko.pdf
-GitHub: https://github.com/peterlodri-sec & https://github.com/8b-is
-Péter József Lódri | cabotage@pm.me | peter.lodri@gmail.com</pre>
       <div class="btn-row">
-        <button class="btn primary" onclick="copyEl('cov-taiko', this)">📋 Copy Cover Letter</button>
-        <a class="btn emerald" href="resumes/cv-peter-lodri-taiko.pdf" download>📄 Download Taiko CV PDF</a>
-        <a class="btn" href="https://taiko.xyz" target="_blank" rel="noopener">↗ Open Taiko Labs</a>
-        <a class="btn" href="applications/06-taiko-zk-rollup-rust-protocol-remote.md">Full Packet</a>
+        <a class="btn p" href="https://teamlab.vaked.dev" target="_blank" rel="noopener noreferrer">Live Interactive Site ↗</a>
+        <a class="btn p" href="teamlab/lodri-resume.pdf" target="_blank" rel="noopener noreferrer">⬇ Resume PDF</a>
+        <a class="btn p" href="teamlab/lodri-portfolio.pdf" target="_blank" rel="noopener noreferrer">⬇ Portfolio PDF</a>
+        <a class="btn p" href="teamlab/lodri-application.pdf" target="_blank" rel="noopener noreferrer">⬇ Application PDF</a>
+        <a class="btn" href="https://teamlab.vaked.dev/eli5" target="_blank" rel="noopener noreferrer">ELI5 3-Min Guide ↗</a>
+        <a class="btn" href="https://www.team-lab.com/recruit/" target="_blank" rel="noopener noreferrer">Official Careers Portal ↗</a>
+        <a class="btn li" href="https://www.linkedin.com/company/teamlab/" target="_blank" rel="noopener noreferrer">LinkedIn Company ↗</a>
+        <a class="btn li" href="https://www.linkedin.com/company/teamlab/people/" target="_blank" rel="noopener noreferrer">LinkedIn People ↗</a>
+        <a class="btn li" href="https://www.linkedin.com/search/results/people/?keywords=teamLab%20%28Recruiter%20OR%20Talent%20OR%20HR%20OR%20Catalyst%20OR%20Interactive%20Engineer%29" target="_blank" rel="noopener noreferrer">Find Recruiters ↗</a>
       </div>
-    </div>
 
-    <footer>
-      8b-is / peter-applications • Prepared for Péter József Lódri (Tokyo, 2026-10-27) • All facts &amp; hashes verified against source repositories.
-    </footer>
+      <div class="li-contacts-box">
+        <div class="box-title">Key LinkedIn &amp; Leadership Contacts (teamLab)</div>
+        <ul><li><a href="https://www.linkedin.com/company/teamlab/" target="_blank" rel="noopener noreferrer"><strong>Toshiyuki Inoko (猪子寿之)</strong></a> — <span>Founder, teamLab</span></li><li><a href="https://www.linkedin.com/search/results/people/?keywords=Takashi%20Kudo%20teamLab" target="_blank" rel="noopener noreferrer"><strong>Takashi Kudo (工藤岳)</strong></a> — <span>Communications Director / Global Brand Lead, teamLab</span></li><li><a href="https://www.linkedin.com/search/results/people/?keywords=teamLab%20HR%20OR%20Recruiter%20Tokyo" target="_blank" rel="noopener noreferrer"><strong>teamLab HR &amp; Interactive Engineering Recruiting</strong></a> — <span>Talent Acquisition · Chiyoda-ku, Tokyo</span></li></ul>
+      </div>
+
+      <div class="copy-grid">
+        <div class="copy-col">
+          <div class="copy-top">
+            <span>LinkedIn Connection Note (&lt;300 chars)</span>
+            <button class="btn p" onclick="copyById('conn-teamlab', this)">Copy Note</button>
+          </div>
+          <pre id="conn-teamlab">Hi! After experiencing teamLab Borderless (Azabudai Hills) &amp; Planets (Toyosu) in Tokyo, I built a live WebGL2/oscilloscope interactive CV specifically for teamLab's Interactive Engineer (Unity/3D) role: https://teamlab.vaked.dev — would love to connect! — Péter Lódri</pre>
+        </div>
+        <div class="copy-col">
+          <div class="copy-top">
+            <span>LinkedIn InMail / Direct Email (lab-shinsotsu@team-lab.com)</span>
+            <button class="btn p" onclick="copyById('inmail-teamlab', this)">Copy InMail / Email</button>
+          </div>
+          <pre id="inmail-teamlab">Hello teamLab Recruiting &amp; Interactive Engineering Team,
+
+Having experienced both teamLab Borderless (Azabudai Hills) and teamLab Planets (Toyosu) in person in Tokyo, I built a live interactive browser CV and bilingual application dossier specifically for your Interactive Engineer (Unity / 3D) and Catalyst roles:
+
+• Live Interactive CV: https://teamlab.vaked.dev
+• Formal 履歴書 + 職務経歴書 (PDF): https://teamlab.vaked.dev/resume.pdf
+• Visual Portfolio (PDF): https://teamlab.vaked.dev/portfolio.pdf
+• Full Application Dossier: https://teamlab.vaked.dev/application
+
+I bring 9+ years of systems engineering (C, Rust, Go, Swift 6) combined with real-time 3D/WebGL2 shader synthesis, vector oscilloscope DSP (lissajoverse, enthea), and open-source architecture (Osiris, Osaurus). I am currently in Japan and ready to interview in Tokyo.
+
+Warm regards,
+Péter József Lódri
+https://www.linkedin.com/in/peter-lodri/</pre>
+        </div>
+      </div>
+    </article>
+
+    <article class="card" id="card-sakana" style="--c-accent:#ff6b4a;--c-sec:#62e6c9">
+      <div class="card-head">
+        <div>
+          <span class="badge">#02 · Minato-ku, Tokyo (港区・虎ノ門 / 赤坂) · ¥15,000,000 – ¥28,000,000+ JPY + Equity</span>
+          <h2><a href="https://sakana.vaked.dev" target="_blank" rel="noopener noreferrer">Sakana AI (サカナAI)</a></h2>
+          <div class="role-line">AI Systems &amp; Multi-GPU Infrastructure Engineer (Low-Bit Inference &amp; Agentic Swarms)</div>
+        </div>
+        <a class="subdomain-pill" href="https://sakana.vaked.dev" target="_blank" rel="noopener noreferrer">🌐 https://sakana.vaked.dev ↗</a>
+      </div>
+
+      <div class="btn-row">
+        <a class="btn p" href="https://sakana.vaked.dev" target="_blank" rel="noopener noreferrer">Live Interactive Site ↗</a>
+        <a class="btn p" href="sakana/lodri-resume.pdf" target="_blank" rel="noopener noreferrer">⬇ Resume PDF</a>
+        <a class="btn p" href="sakana/lodri-portfolio.pdf" target="_blank" rel="noopener noreferrer">⬇ Portfolio PDF</a>
+        <a class="btn p" href="sakana/lodri-application.pdf" target="_blank" rel="noopener noreferrer">⬇ Application PDF</a>
+        <a class="btn" href="https://sakana.vaked.dev/eli5" target="_blank" rel="noopener noreferrer">ELI5 3-Min Guide ↗</a>
+        <a class="btn" href="https://sakana.ai/careers/" target="_blank" rel="noopener noreferrer">Official Careers Portal ↗</a>
+        <a class="btn li" href="https://www.linkedin.com/company/sakana-ai/" target="_blank" rel="noopener noreferrer">LinkedIn Company ↗</a>
+        <a class="btn li" href="https://www.linkedin.com/company/sakana-ai/people/" target="_blank" rel="noopener noreferrer">LinkedIn People ↗</a>
+        <a class="btn li" href="https://www.linkedin.com/search/results/people/?keywords=Sakana%20AI%20%28Recruiter%20OR%20Talent%20OR%20Engineer%20OR%20Founder%29" target="_blank" rel="noopener noreferrer">Find Recruiters ↗</a>
+      </div>
+
+      <div class="li-contacts-box">
+        <div class="box-title">Key LinkedIn &amp; Leadership Contacts (Sakana AI)</div>
+        <ul><li><a href="https://www.linkedin.com/search/results/people/?keywords=David%20Ha%20Sakana%20AI" target="_blank" rel="noopener noreferrer"><strong>David Ha</strong></a> — <span>Co-Founder &amp; CEO, Sakana AI (Former Head of Google Brain Tokyo)</span></li><li><a href="https://www.linkedin.com/search/results/people/?keywords=Llion%20Jones%20Sakana%20AI" target="_blank" rel="noopener noreferrer"><strong>Llion Jones</strong></a> — <span>Co-Founder &amp; CTO, Sakana AI (Co-Author of 'Attention Is All You Need')</span></li><li><a href="https://www.linkedin.com/search/results/people/?keywords=Ren%20Ito%20Sakana%20AI" target="_blank" rel="noopener noreferrer"><strong>Ren Ito (伊藤錬)</strong></a> — <span>Co-Founder &amp; COO, Sakana AI</span></li></ul>
+      </div>
+
+      <div class="copy-grid">
+        <div class="copy-col">
+          <div class="copy-top">
+            <span>LinkedIn Connection Note (&lt;300 chars)</span>
+            <button class="btn p" onclick="copyById('conn-sakana', this)">Copy Note</button>
+          </div>
+          <pre id="conn-sakana">Hi! I built a live interactive Boids + 1.58-bit ternary inference portfolio specifically for Sakana AI's Systems &amp; GPU Infrastructure team in Tokyo: https://sakana.vaked.dev (12.8x BitNet compression + Osaurus/Headroom OSS architect). Would love to connect! — Péter</pre>
+        </div>
+        <div class="copy-col">
+          <div class="copy-top">
+            <span>LinkedIn InMail / Direct Email (careers@sakana.ai)</span>
+            <button class="btn p" onclick="copyById('inmail-sakana', this)">Copy InMail / Email</button>
+          </div>
+          <pre id="inmail-sakana">Dear Sakana AI Founding &amp; Engineering Team,
+
+I built a dedicated interactive showcase and bilingual engineering dossier for Sakana AI's AI Systems &amp; Multi-GPU Infrastructure Engineer role in Tokyo:
+
+• Live Interactive Portfolio (Emergent Boids + Ternary Lattice): https://sakana.vaked.dev
+• Tailored Resume / 職務経歴書 (PDF): https://sakana.vaked.dev/resume.pdf
+• Systems Portfolio (PDF): https://sakana.vaked.dev/portfolio.pdf
+• Full Application &amp; Architecture Note: https://sakana.vaked.dev/application
+
+My work centers on two pillars at the heart of Sakana AI's mission:
+1. Low-Bit Foundation Model Compression (8b-is/MLX-QUANT &amp; pureQTern): 12.80× memory reduction via BitNet b1.58 {-1, 0, +1} ternary quantization with custom Metal GPU kernels and zero-dependency C/Rust codecs.
+2. Collective Multi-Agent Systems: Core Architect on Osaurus (osaurus-ai/osaurus — native Swift offline agent harness), contributor to Headroom (headroomlabs-ai/headroom PR #1418 — kompress domain-routing bias multipliers), and builder of AgentField multi-reasoner DAG orchestration.
+
+Warm regards,
+Péter József Lódri
+https://www.linkedin.com/in/peter-lodri/</pre>
+        </div>
+      </div>
+    </article>
+
+    <article class="card" id="card-pfn" style="--c-accent:#00d2ff;--c-sec:#39ff14">
+      <div class="card-head">
+        <div>
+          <span class="badge">#03 · Otemachi, Chiyoda-ku, Tokyo (大手町フィナンシャルシティ) · ¥12,000,000 – ¥22,000,000+ JPY</span>
+          <h2><a href="https://pfn.vaked.dev" target="_blank" rel="noopener noreferrer">Preferred Networks (PFN · プリファードネットワークス)</a></h2>
+          <div class="role-line">Senior Rust Systems &amp; Custom AI Accelerator Engineer (MN-Core / PLaMo / Rustuna)</div>
+        </div>
+        <a class="subdomain-pill" href="https://pfn.vaked.dev" target="_blank" rel="noopener noreferrer">🌐 https://pfn.vaked.dev ↗</a>
+      </div>
+
+      <div class="btn-row">
+        <a class="btn p" href="https://pfn.vaked.dev" target="_blank" rel="noopener noreferrer">Live Interactive Site ↗</a>
+        <a class="btn p" href="pfn/lodri-resume.pdf" target="_blank" rel="noopener noreferrer">⬇ Resume PDF</a>
+        <a class="btn p" href="pfn/lodri-portfolio.pdf" target="_blank" rel="noopener noreferrer">⬇ Portfolio PDF</a>
+        <a class="btn p" href="pfn/lodri-application.pdf" target="_blank" rel="noopener noreferrer">⬇ Application PDF</a>
+        <a class="btn" href="https://pfn.vaked.dev/eli5" target="_blank" rel="noopener noreferrer">ELI5 3-Min Guide ↗</a>
+        <a class="btn" href="https://www.preferred.jp/en/careers/" target="_blank" rel="noopener noreferrer">Official Careers Portal ↗</a>
+        <a class="btn li" href="https://www.linkedin.com/company/preferred-networks/" target="_blank" rel="noopener noreferrer">LinkedIn Company ↗</a>
+        <a class="btn li" href="https://www.linkedin.com/company/preferred-networks/people/" target="_blank" rel="noopener noreferrer">LinkedIn People ↗</a>
+        <a class="btn li" href="https://www.linkedin.com/search/results/people/?keywords=Preferred%20Networks%20%28Recruiter%20OR%20Talent%20OR%20HR%20OR%20MN-Core%20OR%20PLaMo%29" target="_blank" rel="noopener noreferrer">Find Recruiters ↗</a>
+      </div>
+
+      <div class="li-contacts-box">
+        <div class="box-title">Key LinkedIn &amp; Leadership Contacts (Preferred Networks)</div>
+        <ul><li><a href="https://www.linkedin.com/search/results/people/?keywords=Toru%20Nishikawa%20Preferred%20Networks" target="_blank" rel="noopener noreferrer"><strong>Toru Nishikawa (西川徹)</strong></a> — <span>Co-Founder, President &amp; CEO, Preferred Networks</span></li><li><a href="https://www.linkedin.com/search/results/people/?keywords=Daisuke%20Okanohara%20Preferred%20Networks" target="_blank" rel="noopener noreferrer"><strong>Daisuke Okanohara (岡野原大輔)</strong></a> — <span>Co-Founder &amp; Chief Technology Officer (CTO), Preferred Networks</span></li><li><a href="https://www.linkedin.com/search/results/people/?keywords=Preferred%20Networks%20Recruiter%20OR%20Talent%20Tokyo" target="_blank" rel="noopener noreferrer"><strong>PFN Talent Acquisition &amp; Compiler/Systems Team</strong></a> — <span>Engineering Recruiting · Otemachi, Tokyo</span></li></ul>
+      </div>
+
+      <div class="copy-grid">
+        <div class="copy-col">
+          <div class="copy-top">
+            <span>LinkedIn Connection Note (&lt;300 chars)</span>
+            <button class="btn p" onclick="copyById('conn-pfn', this)">Copy Note</button>
+          </div>
+          <pre id="conn-pfn">Hi! I built a live interactive MN-Core systolic array &amp; Rust systems portfolio specifically for Preferred Networks in Otemachi: https://pfn.vaked.dev — showcasing bit-exact C/Rust 1.58-bit ternary codecs (pureQTern) &amp; custom GPU kernels. Would love to connect! — Péter</pre>
+        </div>
+        <div class="copy-col">
+          <div class="copy-top">
+            <span>LinkedIn InMail / Direct Email (careers@preferred.jp)</span>
+            <button class="btn p" onclick="copyById('inmail-pfn', this)">Copy InMail / Email</button>
+          </div>
+          <pre id="inmail-pfn">Dear Preferred Networks (PFN) Engineering &amp; Talent Team,
+
+I created a dedicated interactive systems portfolio and bilingual application dossier for Preferred Networks in Otemachi, Tokyo:
+
+• Live Interactive Portfolio (MN-Core Systolic Array Simulation): https://pfn.vaked.dev
+• Formal 履歴書 + 職務経歴書 (PDF): https://pfn.vaked.dev/resume.pdf
+• Systems Portfolio (PDF): https://pfn.vaked.dev/portfolio.pdf
+• Full Technical Application Note: https://pfn.vaked.dev/application
+
+Why PFN is my ideal technical home in Tokyo:
+• Bit-Exact C/Rust Low-Bit Runtimes: I built pureQTern and project-zero — dependency-free 1.58-bit ternary codecs in C and Rust verified to the bit by golden SHA-256 hashes, plus custom Metal GPU kernels (MLX-QUANT) achieving 12.80× compression.
+• High-Throughput Systems &amp; Open Source: Core Architect on Osaurus (osaurus-ai/osaurus) &amp; Osiris (simplifaisoul/osiris), contributor to Headroom (PR #1418), and 9+ years leading high-concurrency Go/Rust/Python systems (ASAPP, DailyWire).
+
+Warm regards,
+Péter József Lódri
+https://www.linkedin.com/in/peter-lodri/</pre>
+        </div>
+      </div>
+    </article>
+
+    <article class="card" id="card-tier4" style="--c-accent:#39ff14;--c-sec:#00f0ff">
+      <div class="card-head">
+        <div>
+          <span class="badge">#04 · Shinagawa, Tokyo (品川インターシティ) · ¥10,000,000 – ¥18,000,000+ JPY</span>
+          <h2><a href="https://tier4.vaked.dev" target="_blank" rel="noopener noreferrer">TIER IV (ティアフォー · Autoware)</a></h2>
+          <div class="role-line">Senior Rust Systems &amp; Real-Time Edge GPU Engineer (Autoware Autonomous Driving OS)</div>
+        </div>
+        <a class="subdomain-pill" href="https://tier4.vaked.dev" target="_blank" rel="noopener noreferrer">🌐 https://tier4.vaked.dev ↗</a>
+      </div>
+
+      <div class="btn-row">
+        <a class="btn p" href="https://tier4.vaked.dev" target="_blank" rel="noopener noreferrer">Live Interactive Site ↗</a>
+        <a class="btn p" href="tier4/lodri-resume.pdf" target="_blank" rel="noopener noreferrer">⬇ Resume PDF</a>
+        <a class="btn p" href="tier4/lodri-portfolio.pdf" target="_blank" rel="noopener noreferrer">⬇ Portfolio PDF</a>
+        <a class="btn p" href="tier4/lodri-application.pdf" target="_blank" rel="noopener noreferrer">⬇ Application PDF</a>
+        <a class="btn" href="https://tier4.vaked.dev/eli5" target="_blank" rel="noopener noreferrer">ELI5 3-Min Guide ↗</a>
+        <a class="btn" href="https://tier4.co.jp/en/careers" target="_blank" rel="noopener noreferrer">Official Careers Portal ↗</a>
+        <a class="btn li" href="https://www.linkedin.com/company/tier-iv/" target="_blank" rel="noopener noreferrer">LinkedIn Company ↗</a>
+        <a class="btn li" href="https://www.linkedin.com/company/tier-iv/people/" target="_blank" rel="noopener noreferrer">LinkedIn People ↗</a>
+        <a class="btn li" href="https://www.linkedin.com/search/results/people/?keywords=TIER%20IV%20%28Recruiter%20OR%20Talent%20OR%20Autoware%20OR%20Rust%29" target="_blank" rel="noopener noreferrer">Find Recruiters ↗</a>
+      </div>
+
+      <div class="li-contacts-box">
+        <div class="box-title">Key LinkedIn &amp; Leadership Contacts (TIER IV)</div>
+        <ul><li><a href="https://www.linkedin.com/search/results/people/?keywords=Shinpei%20Kato%20TIER%20IV" target="_blank" rel="noopener noreferrer"><strong>Shinpei Kato (加藤真平)</strong></a> — <span>Founder &amp; CEO / CTO, TIER IV &amp; Founder of The Autoware Foundation</span></li><li><a href="https://www.linkedin.com/search/results/people/?keywords=Kazuya%20Takeda%20TIER%20IV" target="_blank" rel="noopener noreferrer"><strong>Kazuya Takeda (竹田一哉)</strong></a> — <span>Co-Founder &amp; Chief Scientist, TIER IV</span></li><li><a href="https://www.linkedin.com/search/results/people/?keywords=TIER%20IV%20Recruiter%20OR%20Talent%20Acquisition%20Tokyo" target="_blank" rel="noopener noreferrer"><strong>TIER IV Global Engineering Talent Acquisition</strong></a> — <span>Technical Recruiting · Shinagawa, Tokyo</span></li></ul>
+      </div>
+
+      <div class="copy-grid">
+        <div class="copy-col">
+          <div class="copy-top">
+            <span>LinkedIn Connection Note (&lt;300 chars)</span>
+            <button class="btn p" onclick="copyById('conn-tier4', this)">Copy Note</button>
+          </div>
+          <pre id="conn-tier4">Hi! I built an interactive real-time LiDAR perception &amp; Rust systems portfolio specifically for TIER IV's Autoware engineering team in Shinagawa: https://tier4.vaked.dev — combining zero-allocation C/Rust engines, edge GPU quantization &amp; OSINT 3D architecture (Osiris). Would love to connect!</pre>
+        </div>
+        <div class="copy-col">
+          <div class="copy-top">
+            <span>LinkedIn InMail / Direct Email (careers@tier4.jp)</span>
+            <button class="btn p" onclick="copyById('inmail-tier4', this)">Copy InMail / Email</button>
+          </div>
+          <pre id="inmail-tier4">Dear TIER IV Autoware Engineering &amp; Talent Team,
+
+I built a live interactive LiDAR perception simulation and bilingual engineering application package tailored for TIER IV in Shinagawa, Tokyo:
+
+• Live Interactive CV (Real-Time LiDAR Point Cloud &amp; Trajectory Planner): https://tier4.vaked.dev
+• Formal 履歴書 + 職務経歴書 (PDF): https://tier4.vaked.dev/resume.pdf
+• Edge &amp; Systems Portfolio (PDF): https://tier4.vaked.dev/portfolio.pdf
+• Full Application Dossier: https://tier4.vaked.dev/application
+
+I bring 9+ years of production systems engineering across C, Rust, Go, Linux kernel internals (Inpedio kptr_restrict &amp; eBPF), real-time 3D spatial visualization (Core Architect on Osiris — simplifaisoul/osiris), and 12.80× compressed edge GPU inference (MLX-QUANT / pureQTern). I am ready to contribute immediately to Autoware's safety-critical Rust and edge perception stack in Tokyo.
+
+Warm regards,
+Péter József Lódri
+https://www.linkedin.com/in/peter-lodri/</pre>
+        </div>
+      </div>
+    </article>
+
+    <article class="card" id="card-woven" style="--c-accent:#ff3366;--c-sec:#62e6c9">
+      <div class="card-head">
+        <div>
+          <span class="badge">#05 · Nihonbashi, Chuo-ku, Tokyo (日本橋室町三井タワー) · ¥12,000,000 – ¥22,000,000+ JPY</span>
+          <h2><a href="https://woven.vaked.dev" target="_blank" rel="noopener noreferrer">Woven by Toyota (ウーブン・バイ・トヨタ)</a></h2>
+          <div class="role-line">Senior Systems Software Engineer — Rust, Simulation &amp; Accelerated ML Platform (Arene SDV)</div>
+        </div>
+        <a class="subdomain-pill" href="https://woven.vaked.dev" target="_blank" rel="noopener noreferrer">🌐 https://woven.vaked.dev ↗</a>
+      </div>
+
+      <div class="btn-row">
+        <a class="btn p" href="https://woven.vaked.dev" target="_blank" rel="noopener noreferrer">Live Interactive Site ↗</a>
+        <a class="btn p" href="woven/lodri-resume.pdf" target="_blank" rel="noopener noreferrer">⬇ Resume PDF</a>
+        <a class="btn p" href="woven/lodri-portfolio.pdf" target="_blank" rel="noopener noreferrer">⬇ Portfolio PDF</a>
+        <a class="btn p" href="woven/lodri-application.pdf" target="_blank" rel="noopener noreferrer">⬇ Application PDF</a>
+        <a class="btn" href="https://woven.vaked.dev/eli5" target="_blank" rel="noopener noreferrer">ELI5 3-Min Guide ↗</a>
+        <a class="btn" href="https://woven.toyota/en/careers" target="_blank" rel="noopener noreferrer">Official Careers Portal ↗</a>
+        <a class="btn li" href="https://www.linkedin.com/company/wovenbytoyota/" target="_blank" rel="noopener noreferrer">LinkedIn Company ↗</a>
+        <a class="btn li" href="https://www.linkedin.com/company/wovenbytoyota/people/" target="_blank" rel="noopener noreferrer">LinkedIn People ↗</a>
+        <a class="btn li" href="https://www.linkedin.com/search/results/people/?keywords=%22Woven%20by%20Toyota%22%20%28Recruiter%20OR%20Talent%20OR%20Arene%20OR%20Simulation%20OR%20Rust%29" target="_blank" rel="noopener noreferrer">Find Recruiters ↗</a>
+      </div>
+
+      <div class="li-contacts-box">
+        <div class="box-title">Key LinkedIn &amp; Leadership Contacts (Woven by Toyota)</div>
+        <ul><li><a href="https://www.linkedin.com/search/results/people/?keywords=Hajime%20Kumabe%20Woven%20by%20Toyota" target="_blank" rel="noopener noreferrer"><strong>Hajime Kumabe (隈部肇)</strong></a> — <span>Chief Executive Officer (CEO), Woven by Toyota</span></li><li><a href="https://www.linkedin.com/search/results/people/?keywords=John%20Absmeier%20Woven%20by%20Toyota" target="_blank" rel="noopener noreferrer"><strong>John Absmeier</strong></a> — <span>Chief Technology Officer (CTO), Woven by Toyota</span></li><li><a href="https://www.linkedin.com/search/results/people/?keywords=%22Woven%20by%20Toyota%22%20Recruiter%20OR%20Talent%20Acquisition" target="_blank" rel="noopener noreferrer"><strong>Woven by Toyota Talent Acquisition (Arene &amp; Enterprise AI)</strong></a> — <span>Technical Recruiting · Nihonbashi, Tokyo</span></li></ul>
+      </div>
+
+      <div class="copy-grid">
+        <div class="copy-col">
+          <div class="copy-top">
+            <span>LinkedIn Connection Note (&lt;300 chars)</span>
+            <button class="btn p" onclick="copyById('conn-woven', this)">Copy Note</button>
+          </div>
+          <pre id="conn-woven">Hi! I built an interactive Arene SDV / Woven City 3D digital-twin portfolio specifically for Woven by Toyota in Nihonbashi: https://woven.vaked.dev — uniting Rust/C systems, real-time 3D simulation &amp; edge ML compression. Would love to connect! — Péter Lódri</pre>
+        </div>
+        <div class="copy-col">
+          <div class="copy-top">
+            <span>LinkedIn InMail / Direct Email (careers@woven.toyota)</span>
+            <button class="btn p" onclick="copyById('inmail-woven', this)">Copy InMail / Email</button>
+          </div>
+          <pre id="inmail-woven">Dear Woven by Toyota Engineering &amp; Talent Acquisition Team,
+
+I built a live interactive 3D digital-twin showcase and bilingual application dossier specifically for Woven by Toyota's Senior Systems Software Engineer (Rust, Simulation &amp; Accelerated ML Platform — Arene SDV) roles in Nihonbashi, Tokyo:
+
+• Live Interactive CV (Woven Digital Twin &amp; Telemetry Mesh): https://woven.vaked.dev
+• Formal 履歴書 + 職務経歴書 (PDF): https://woven.vaked.dev/resume.pdf
+• Simulation &amp; Systems Portfolio (PDF): https://woven.vaked.dev/portfolio.pdf
+• Full Application Dossier: https://woven.vaked.dev/application
+
+I combine 9+ years of distributed backend and systems leadership (ASAPP, DailyWire, institutional fintech ETL) with real-time 3D simulation engines (Core Architect on Osiris — simplifaisoul/osiris, plus Age of Gaia &amp; Water-Fall Disc), autonomous agent harnesses (Osaurus), and bit-exact C/Rust low-bit ML inference (pureQTern / MLX-QUANT). I live and breathe Tokyo's craft culture and would love to help ship Arene and Woven City.
+
+Warm regards,
+Péter József Lódri
+https://www.linkedin.com/in/peter-lodri/</pre>
+        </div>
+      </div>
+    </article>
+
+    <article class="card" id="card-taiko" style="--c-accent:#e81899;--c-sec:#62e6c9">
+      <div class="card-head">
+        <div>
+          <span class="badge">#06 · Global Remote from Tokyo (UTC+9 · 東京リモート) · $160,000 – $240,000+ USD + Token/Equity</span>
+          <h2><a href="https://taiko.vaked.dev" target="_blank" rel="noopener noreferrer">Taiko Labs (Based Ethereum ZK-Rollup)</a></h2>
+          <div class="role-line">Senior Rust Protocol &amp; Verifiable Compute Engineer (Based Rollups &amp; Multi-Proof Prover Infrastructure)</div>
+        </div>
+        <a class="subdomain-pill" href="https://taiko.vaked.dev" target="_blank" rel="noopener noreferrer">🌐 https://taiko.vaked.dev ↗</a>
+      </div>
+
+      <div class="btn-row">
+        <a class="btn p" href="https://taiko.vaked.dev" target="_blank" rel="noopener noreferrer">Live Interactive Site ↗</a>
+        <a class="btn p" href="taiko/lodri-resume.pdf" target="_blank" rel="noopener noreferrer">⬇ Resume PDF</a>
+        <a class="btn p" href="taiko/lodri-portfolio.pdf" target="_blank" rel="noopener noreferrer">⬇ Portfolio PDF</a>
+        <a class="btn p" href="taiko/lodri-application.pdf" target="_blank" rel="noopener noreferrer">⬇ Application PDF</a>
+        <a class="btn" href="https://taiko.vaked.dev/eli5" target="_blank" rel="noopener noreferrer">ELI5 3-Min Guide ↗</a>
+        <a class="btn" href="https://taiko.xyz" target="_blank" rel="noopener noreferrer">Official Careers Portal ↗</a>
+        <a class="btn li" href="https://www.linkedin.com/company/taikoxyz/" target="_blank" rel="noopener noreferrer">LinkedIn Company ↗</a>
+        <a class="btn li" href="https://www.linkedin.com/company/taikoxyz/people/" target="_blank" rel="noopener noreferrer">LinkedIn People ↗</a>
+        <a class="btn li" href="https://www.linkedin.com/search/results/people/?keywords=Taiko%20%28Recruiter%20OR%20Talent%20OR%20Brecht%20OR%20Daniel%20OR%20Rust%29" target="_blank" rel="noopener noreferrer">Find Recruiters ↗</a>
+      </div>
+
+      <div class="li-contacts-box">
+        <div class="box-title">Key LinkedIn &amp; Leadership Contacts (Taiko Labs)</div>
+        <ul><li><a href="https://www.linkedin.com/in/dawang" target="_blank" rel="noopener noreferrer"><strong>Daniel Wang</strong></a> — <span>Co-Founder &amp; CEO, Taiko Labs (Former Founder of Loopring)</span></li><li><a href="https://www.linkedin.com/in/brecht-devos" target="_blank" rel="noopener noreferrer"><strong>Brecht Devos</strong></a> — <span>Co-Founder &amp; CTO, Taiko Labs (Former PSE / Loopring Chief Architect)</span></li><li><a href="https://www.linkedin.com/company/taikoxyz/people/" target="_blank" rel="noopener noreferrer"><strong>Taiko Labs People &amp; Protocol Recruiting</strong></a> — <span>Global Remote Talent Team</span></li></ul>
+      </div>
+
+      <div class="copy-grid">
+        <div class="copy-col">
+          <div class="copy-top">
+            <span>LinkedIn Connection Note (&lt;300 chars)</span>
+            <button class="btn p" onclick="copyById('conn-taiko', this)">Copy Note</button>
+          </div>
+          <pre id="conn-taiko">Hi! I built an interactive Based Rollup state-ring &amp; Rust verifiable-compute portfolio specifically for Taiko Labs: https://taiko.vaked.dev — showcasing bit-exact C↔Rust codecs (pureQTern), Kintsugi SHA-256 ledgers (ZENO) &amp; GPU kernels. Would love to connect! — Péter Lódri</pre>
+        </div>
+        <div class="copy-col">
+          <div class="copy-top">
+            <span>LinkedIn InMail / Direct Email (jobs@taiko.xyz)</span>
+            <button class="btn p" onclick="copyById('inmail-taiko', this)">Copy InMail / Email</button>
+          </div>
+          <pre id="inmail-taiko">Dear Taiko Labs Protocol &amp; Engineering Team (Daniel, Brecht &amp; Team),
+
+I built a live interactive Based Rollup verification showcase and protocol engineering CV specifically for Taiko Labs:
+
+• Live Interactive Protocol CV: https://taiko.vaked.dev
+• Protocol &amp; Rust Engineering CV (PDF): https://taiko.vaked.dev/resume.pdf
+• Verifiable Systems Portfolio (PDF): https://taiko.vaked.dev/portfolio.pdf
+• Full Protocol Application Dossier: https://taiko.vaked.dev/application
+
+Why my work maps directly to Taiko's Rust nodes and Raiko multi-proof pipeline:
+1. Cross-Language Bit-Exact Determinism (pureQTern): Dependency-free C and Rust codecs verified to produce identical SHA-256 golden hashes across architectures — the exact discipline required for multi-client L2 state transitions.
+2. Cryptographic Ledgers &amp; Verifiable Credentials (ZENO &amp; AgentField): Architected ZENO's double-entry Kintsugi SHA-256 hash-chained ledger (zeno.vaked.dev) and AgentField's cryptographic VC verification gates, plus Core Architect on Osaurus (cryptographic agent identity in Swift) and Osiris.
+3. Custom GPU Compute Kernels (MLX-QUANT): Low-level Metal/GPU kernels achieving 12.80× compression.
+
+Warm regards,
+Péter József Lódri
+https://www.linkedin.com/in/peter-lodri/</pre>
+        </div>
+      </div>
+    </article>
   </main>
 
-  <script>
-    function copyText(txt, btn) {
-      navigator.clipboard.writeText(txt);
-      const orig = btn.textContent;
-      btn.textContent = "✓ Copied!";
-      setTimeout(() => { btn.textContent = orig; }, 1800);
-    }
-    function copyEl(id, btn) {
-      const txt = document.getElementById(id).textContent;
-      copyText(txt, btn);
-    }
-  </script>
+  <footer>
+    <div>Péter József Lódri · Passport: BJ3429501 · Visa Ref: LYYT5925161 · <a href="https://www.linkedin.com/in/peter-lodri/">linkedin.com/in/peter-lodri</a></div>
+    <div>Subdomain Fleet: <a href="https://apply.vaked.dev">apply.vaked.dev</a> · <a href="https://teamlab.vaked.dev">teamlab.vaked.dev</a> · <a href="https://sakana.vaked.dev">sakana.vaked.dev</a> · <a href="https://pfn.vaked.dev">pfn.vaked.dev</a> · <a href="https://tier4.vaked.dev">tier4.vaked.dev</a> · <a href="https://woven.vaked.dev">woven.vaked.dev</a> · <a href="https://taiko.vaked.dev">taiko.vaked.dev</a></div>
+    <div>fine touch from within · peter + 8b.is &lt;3 · {−1, 0, +1} · om mani padme hum</div>
+  </footer>
+</div>
+<script>
+function copyById(id, btn) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  navigator.clipboard.writeText(el.innerText).then(() => {
+    const prev = btn.textContent;
+    btn.textContent = "✓ COPIED";
+    setTimeout(() => { btn.textContent = prev; }, 1600);
+  });
+}
+</script>
 </body>
 </html>

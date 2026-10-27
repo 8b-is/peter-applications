@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Péter József Lódri — Engineering Portfolio for Woven by Toyota (ウーブン・バイ・トヨタ)</title>
+<style>
+  :root {
+    color-scheme: dark;
+    --ink: #f2f4ff;
+    --dim: #c2c6e6;
+    --faint: #8f95bd;
+    --bg: #070a12;
+    --surface: #101524;
+    --line: rgba(255,255,255,0.14);
+    --accent: #ff3366;
+    --sec: #62e6c9;
+    --mono: ui-monospace, "SF Mono", Menlo, monospace;
+    --sans: "Inter", system-ui, -apple-system, "Hiragino Sans", sans-serif;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: var(--sans); font-size: 0.92rem; line-height: 1.6; color: var(--ink); background: var(--bg); -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  a { color: var(--sec); text-decoration: none; }
+  .page { max-width: 48rem; margin: 0 auto; padding: 0 clamp(16px, 4vw, 36px); }
+  .band { padding: 28px 0 22px; border-bottom: 1px solid var(--line); background: linear-gradient(135deg, rgba(255,255,255,0.05), transparent); }
+  .kicker { font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--accent); }
+  .name { font-size: 2.3rem; font-weight: 800; margin-top: 6px; color: #fff; }
+  .role { font-size: 1.05rem; color: var(--ink); margin-top: 6px; }
+  .lede { font-family: var(--mono); font-size: 0.8rem; color: var(--dim); margin-top: 8px; }
+  .contacts { display: flex; flex-wrap: wrap; gap: 8px 14px; margin-top: 12px; font-family: var(--mono); font-size: 0.75rem; color: var(--dim); }
+  section { padding-block: 18px; break-inside: avoid; }
+  .sec-head { display: flex; align-items: baseline; gap: 12px; margin-bottom: 12px; border-bottom: 1px solid var(--line); padding-bottom: 5px; }
+  .sec-head .n { font-family: var(--mono); font-size: 0.74rem; color: var(--accent); }
+  .sec-head h2 { font-size: 1.25rem; font-weight: 700; color: #fff; }
+  .works { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .work { padding: 14px 16px; border-radius: 10px; background: var(--surface); border: 1px solid var(--line); display: block; color: inherit; break-inside: avoid; }
+  .work .tag { font-family: var(--mono); font-size: 0.66rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); }
+  .work h3 { font-size: 1rem; margin: 4px 0 6px; color: #fff; }
+  .work p { font-size: 0.82rem; color: var(--dim); }
+  .work .url { font-family: var(--mono); font-size: 0.71rem; color: var(--sec); margin-top: 8px; }
+  .why { padding: 16px 18px; border-radius: 10px; background: var(--surface); border: 1px solid var(--line); font-size: 0.88rem; line-height: 1.75; }
+  footer { margin-top: 14px; padding: 14px 0 24px; border-top: 1px solid var(--line); font-family: var(--mono); font-size: 0.72rem; color: var(--faint); line-height: 1.8; }
+  @page { size: A4; margin: 10mm 11mm; }
+</style>
+</head>
+<body>
+<div class="band">
+  <div class="page">
+    <p class="kicker">ENGINEERING &amp; ARCHITECTURE PORTFOLIO · Woven by Toyota (ウーブン・バイ・トヨタ)</p>
+    <h1 class="name">Péter József Lódri</h1>
+    <p class="role">Senior Systems Software Engineer — Rust, Simulation &amp; Accelerated ML Platform (Arene SDV) — Building the software-defined vehicle operating system and real-time 3D digital twin fabric.</p>
+    <p class="lede">Printable mirror of <a href="https://woven.vaked.dev">https://woven.vaked.dev</a> · LinkedIn: <a href="https://www.linkedin.com/in/peter-lodri/">linkedin.com/in/peter-lodri</a></p>
+    <nav class="contacts">
+      <a href="mailto:peter.lodri@gmail.com">peter.lodri@gmail.com</a> ·
+      <a href="https://www.linkedin.com/in/peter-lodri/">LinkedIn</a> ·
+      <a href="https://github.com/peterlodri-sec">github.com/peterlodri-sec</a> ·
+      <a href="https://github.com/8b-is">github.com/8b-is</a> ·
+      <a href="https://woven.vaked.dev">woven.vaked.dev</a>
+    </nav>
+  </div>
+</div>
+
+<div class="page">
+  <main>
+    <section id="works">
+      <div class="sec-head"><span class="n">01</span><h2>Selected Architecture &amp; Engineering Works for Woven by Toyota (ウーブン・バイ・トヨタ)</h2></div>
+      <div class="works">
+        
+        <a class="work" href="https://github.com/simplifaisoul/osiris">
+          <span class="tag">OSS Architect · Real-Time 3D Digital Twin</span>
+          <h3>Osiris (simplifaisoul/osiris)</h3>
+          <p>Core Architect on Osiris — real-time 3D geospatial digital twin and live multi-stream telemetry visualization platform.</p>
+          <div class="url">github.com/simplifaisoul/osiris</div>
+        </a>
+
+        <a class="work" href="https://age.vaked.dev">
+          <span class="tag">Deterministic Simulation Engine · Zero Deps</span>
+          <h3>Age of Gaia &amp; Water-Fall Disc</h3>
+          <p>Self-contained deterministic game-loop and physical particle simulation engines with zero external dependencies.</p>
+          <div class="url">age.vaked.dev · pocoo.vaked.dev/water</div>
+        </a>
+
+        <a class="work" href="https://github.com/8b-is">
+          <span class="tag">Rust / C · Bit-Exact Edge ML Codec</span>
+          <h3>pureQTern &amp; MLX-QUANT</h3>
+          <p>Bit-exact C and Rust 1.58-bit ternary codec + custom GPU kernels delivering 12.80× model compression for in-vehicle ECUs.</p>
+          <div class="url">github.com/8b-is · pureQTern &amp; MLX-QUANT</div>
+        </a>
+
+        <a class="work" href="https://github.com/osaurus-ai/osaurus">
+          <span class="tag">OSS Architect · Cryptographic Agent Harness</span>
+          <h3>Osaurus &amp; Headroom (PR #1418)</h3>
+          <p>Core Architect on Osaurus (native Swift agent runtime with cryptographic identity) and contributor to Headroom kompress domain routing.</p>
+          <div class="url">github.com/osaurus-ai/osaurus</div>
+        </a>
+
+        <a class="work" href="https://github.com/peterlodri-sec">
+          <span class="tag">High-Concurrency Telemetry · 110k+ Users</span>
+          <h3>Distributed Streaming &amp; Telemetry</h3>
+          <p>Led backend streaming for 110k+ concurrent users at DailyWire and reduced enterprise latency by 50–70% at ASAPP via Go/Kafka/K8s.</p>
+          <div class="url">Go · Rust · Kafka · Kubernetes</div>
+        </a>
+
+        <a class="work" href="https://zeno.vaked.dev">
+          <span class="tag">Hash-Chained Verification · Sovereign Ledger</span>
+          <h3>ZENO (銭 · 禅 · 善)</h3>
+          <p>Double-entry SHA-256 hash-chained ledger ensuring tamper-evident auditability for every state transition.</p>
+          <div class="url">zeno.vaked.dev</div>
+        </a>
+      </div>
+    </section>
+
+    <section id="why">
+      <div class="sec-head"><span class="n">02</span><h2>Why Woven by Toyota (ウーブン・バイ・トヨタ) (Nihonbashi, Chuo-ku, Tokyo (日本橋室町三井タワー))</h2></div>
+      <div class="why">
+        <p>Woven by Toyota is executing the most ambitious systems integration challenge in Japan: building Arene as a programmable operating system for millions of vehicles while turning Woven City into a living physical-digital testbed. That requires engineers who can cross cleanly between memory-safe Rust systems, deterministic 3D simulation twins, high-throughput cloud telemetry, and compressed edge ML — the exact intersection I have built across Osiris, pureQTern, MLX-QUANT, and 9+ years of production distributed engineering.</p>
+        <p style="margin-top:10px" lang="ja">Woven by Toyotaが日本橋から世界へ発信するソフトウェア・ディファインド・ビークルOS「Arene」と実証都市「Woven City」は、モビリティの歴史を書き換える挑戦です。Rust/Cによる高信頼システム開発、リアルタイム3Dデジタルツイン基盤（Osiris）、11万同時接続を処理した大規模分散テレメトリ、そして車載推論を12.80倍効率化する量子化技術（pureQTern / MLX-QUANT）を結集し、AreneとWoven Cityのコア基盤開発に貢献したいと強く志望しています。</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div>Péter József Lódri · Live Interactive Site: <a href="https://woven.vaked.dev">https://woven.vaked.dev</a> · Master Hub: <a href="https://apply.vaked.dev">https://apply.vaked.dev</a></div>
+    <div>fine touch from within · peter + 8b.is &lt;3 · {−1, 0, +1} · om mani padme hum</div>
+  </footer>
+</div>
+</body>
+</html>

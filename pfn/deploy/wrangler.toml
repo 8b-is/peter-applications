@@ -1,0 +1,7 @@
+name = "pfn-cv"
+main = "worker.js"
+compatibility_date = "2026-09-01"
+
+routes = [
+  { pattern = "pfn.vaked.dev", custom_domain = true }
+]

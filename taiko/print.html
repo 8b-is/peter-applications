@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Péter József Lódri — Engineering Portfolio for Taiko Labs (Based Ethereum ZK-Rollup)</title>
+<style>
+  :root {
+    color-scheme: dark;
+    --ink: #f2f4ff;
+    --dim: #c2c6e6;
+    --faint: #8f95bd;
+    --bg: #070a12;
+    --surface: #101524;
+    --line: rgba(255,255,255,0.14);
+    --accent: #e81899;
+    --sec: #62e6c9;
+    --mono: ui-monospace, "SF Mono", Menlo, monospace;
+    --sans: "Inter", system-ui, -apple-system, "Hiragino Sans", sans-serif;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: var(--sans); font-size: 0.92rem; line-height: 1.6; color: var(--ink); background: var(--bg); -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  a { color: var(--sec); text-decoration: none; }
+  .page { max-width: 48rem; margin: 0 auto; padding: 0 clamp(16px, 4vw, 36px); }
+  .band { padding: 28px 0 22px; border-bottom: 1px solid var(--line); background: linear-gradient(135deg, rgba(255,255,255,0.05), transparent); }
+  .kicker { font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--accent); }
+  .name { font-size: 2.3rem; font-weight: 800; margin-top: 6px; color: #fff; }
+  .role { font-size: 1.05rem; color: var(--ink); margin-top: 6px; }
+  .lede { font-family: var(--mono); font-size: 0.8rem; color: var(--dim); margin-top: 8px; }
+  .contacts { display: flex; flex-wrap: wrap; gap: 8px 14px; margin-top: 12px; font-family: var(--mono); font-size: 0.75rem; color: var(--dim); }
+  section { padding-block: 18px; break-inside: avoid; }
+  .sec-head { display: flex; align-items: baseline; gap: 12px; margin-bottom: 12px; border-bottom: 1px solid var(--line); padding-bottom: 5px; }
+  .sec-head .n { font-family: var(--mono); font-size: 0.74rem; color: var(--accent); }
+  .sec-head h2 { font-size: 1.25rem; font-weight: 700; color: #fff; }
+  .works { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .work { padding: 14px 16px; border-radius: 10px; background: var(--surface); border: 1px solid var(--line); display: block; color: inherit; break-inside: avoid; }
+  .work .tag { font-family: var(--mono); font-size: 0.66rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); }
+  .work h3 { font-size: 1rem; margin: 4px 0 6px; color: #fff; }
+  .work p { font-size: 0.82rem; color: var(--dim); }
+  .work .url { font-family: var(--mono); font-size: 0.71rem; color: var(--sec); margin-top: 8px; }
+  .why { padding: 16px 18px; border-radius: 10px; background: var(--surface); border: 1px solid var(--line); font-size: 0.88rem; line-height: 1.75; }
+  footer { margin-top: 14px; padding: 14px 0 24px; border-top: 1px solid var(--line); font-family: var(--mono); font-size: 0.72rem; color: var(--faint); line-height: 1.8; }
+  @page { size: A4; margin: 10mm 11mm; }
+</style>
+</head>
+<body>
+<div class="band">
+  <div class="page">
+    <p class="kicker">ENGINEERING &amp; ARCHITECTURE PORTFOLIO · Taiko Labs (Based Ethereum ZK-Rollup)</p>
+    <h1 class="name">Péter József Lódri</h1>
+    <p class="role">Senior Rust Protocol &amp; Verifiable Compute Engineer (Based Rollups &amp; Multi-Proof Prover Infrastructure) — Bit-exact Rust state transitions, SHA-256 hash-chained ledgers, and GPU-accelerated verifiable compute.</p>
+    <p class="lede">Printable mirror of <a href="https://taiko.vaked.dev">https://taiko.vaked.dev</a> · LinkedIn: <a href="https://www.linkedin.com/in/peter-lodri/">linkedin.com/in/peter-lodri</a></p>
+    <nav class="contacts">
+      <a href="mailto:peter.lodri@gmail.com">peter.lodri@gmail.com</a> ·
+      <a href="https://www.linkedin.com/in/peter-lodri/">LinkedIn</a> ·
+      <a href="https://github.com/peterlodri-sec">github.com/peterlodri-sec</a> ·
+      <a href="https://github.com/8b-is">github.com/8b-is</a> ·
+      <a href="https://taiko.vaked.dev">taiko.vaked.dev</a>
+    </nav>
+  </div>
+</div>
+
+<div class="page">
+  <main>
+    <section id="works">
+      <div class="sec-head"><span class="n">01</span><h2>Selected Architecture &amp; Engineering Works for Taiko Labs (Based Ethereum ZK-Rollup)</h2></div>
+      <div class="works">
+        
+        <a class="work" href="https://github.com/peterlodri-sec">
+          <span class="tag">C ↔ Rust · Bit-Exact State Determinism</span>
+          <h3>pureQTern &amp; project-zero</h3>
+          <p>Cross-language C and Rust ternary codecs verified to agree to the single bit via deterministic SHA-256 golden hashes.</p>
+          <div class="url">github.com/peterlodri-sec · pureQTern</div>
+        </a>
+
+        <a class="work" href="https://zeno.vaked.dev">
+          <span class="tag">SHA-256 Hash-Chained Ledger · Sovereign Settlement</span>
+          <h3>ZENO (銭 · 禅 · 善)</h3>
+          <p>Double-entry Kintsugi SHA-256 hash-chained ledger, deterministic settlement engine, and Foken proof-of-contribution bridge.</p>
+          <div class="url">zeno.vaked.dev</div>
+        </a>
+
+        <a class="work" href="https://github.com/peterlodri-sec">
+          <span class="tag">Verifiable Credentials · Multi-Reasoner DAGs</span>
+          <h3>AgentField Verifiable Compute</h3>
+          <p>Cryptographic Verifiable Credential (VC) issuance and verification across distributed multi-agent execution graphs.</p>
+          <div class="url">github.com/peterlodri-sec · AgentField</div>
+        </a>
+
+        <a class="work" href="https://github.com/8b-is">
+          <span class="tag">GPU Compute Kernels · 12.80× Compression</span>
+          <h3>8b-is / MLX-QUANT</h3>
+          <p>Custom packed ternary GPU kernels and register-level bitpacking routines applicable to high-throughput prover acceleration.</p>
+          <div class="url">github.com/8b-is · MLX-QUANT</div>
+        </a>
+
+        <a class="work" href="https://github.com/osaurus-ai/osaurus">
+          <span class="tag">OSS Architect · Cryptographic Identity</span>
+          <h3>Osaurus, Osiris &amp; Headroom (#1418)</h3>
+          <p>Core Architect on Osaurus (autonomous runtime with cryptographic identity) &amp; Osiris (real-time global intelligence), plus Headroom PR #1418.</p>
+          <div class="url">github.com/osaurus-ai/osaurus · simplifaisoul/osiris</div>
+        </a>
+
+        <a class="work" href="https://github.com/peterlodri-sec">
+          <span class="tag">Quantitative Financial Systems · High Concurrency</span>
+          <h3>Institutional Fintech &amp; 110k+ Stream Systems</h3>
+          <p>Built deterministic financial ETL pipelines for Sixth Street, Citadel &amp; Morgan Stanley, and 110k-concurrent Go backends at DailyWire.</p>
+          <div class="url">Rust · Go · C · Cryptographic Verification</div>
+        </a>
+      </div>
+    </section>
+
+    <section id="why">
+      <div class="sec-head"><span class="n">02</span><h2>Why Taiko Labs (Based Ethereum ZK-Rollup) (Global Remote from Tokyo (UTC+9 · 東京リモート))</h2></div>
+      <div class="why">
+        <p>Taiko's Based Contestable Rollup (BCR) and Raiko multi-proof architecture represent the cleanest protocol design in Ethereum scaling: credible neutrality via L1 sequencing, paired with heterogeneous ZK/SGX/TEE proofs so no single prover bug can compromise state. Every system I build — from pureQTern's cross-language C↔Rust golden-hash equivalence to ZENO's SHA-256 Kintsugi ledger and Osaurus's cryptographic agent identity — is engineered around that exact principle: a claim is only real when a stranger can cryptographically verify the state transition to the bit.</p>
+        <p style="margin-top:10px" lang="ja">Taikoが推進するBased Contestable Rollup（BCR）とマルチプルーバー基盤「Raiko」は、中央集権的なシーケンサーを排し、複数の独立した暗号学的証明によって単一障害点をなくす最も美しいプロトコル設計です。CとRustで1ビットの狂いもなくゴールデンハッシュが一致する決定論的コーデック（pureQTern）やSHA-256ハッシュチェーン台帳（ZENO）を構築してきた経験を活かし、東京（UTC+9）からTaikoのRustプロトコルと証明基盤の進化に貢献します。</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div>Péter József Lódri · Live Interactive Site: <a href="https://taiko.vaked.dev">https://taiko.vaked.dev</a> · Master Hub: <a href="https://apply.vaked.dev">https://apply.vaked.dev</a></div>
+    <div>fine touch from within · peter + 8b.is &lt;3 · {−1, 0, +1} · om mani padme hum</div>
+  </footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,7 @@
+name = "teamlab-cv"
+main = "worker.js"
+compatibility_date = "2026-09-01"
+
+routes = [
+  { pattern = "teamlab.vaked.dev", custom_domain = true }
+]

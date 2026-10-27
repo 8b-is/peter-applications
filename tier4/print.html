@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Péter József Lódri — Engineering Portfolio for TIER IV (ティアフォー · Autoware)</title>
+<style>
+  :root {
+    color-scheme: dark;
+    --ink: #f2f4ff;
+    --dim: #c2c6e6;
+    --faint: #8f95bd;
+    --bg: #070a12;
+    --surface: #101524;
+    --line: rgba(255,255,255,0.14);
+    --accent: #39ff14;
+    --sec: #00f0ff;
+    --mono: ui-monospace, "SF Mono", Menlo, monospace;
+    --sans: "Inter", system-ui, -apple-system, "Hiragino Sans", sans-serif;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: var(--sans); font-size: 0.92rem; line-height: 1.6; color: var(--ink); background: var(--bg); -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  a { color: var(--sec); text-decoration: none; }
+  .page { max-width: 48rem; margin: 0 auto; padding: 0 clamp(16px, 4vw, 36px); }
+  .band { padding: 28px 0 22px; border-bottom: 1px solid var(--line); background: linear-gradient(135deg, rgba(255,255,255,0.05), transparent); }
+  .kicker { font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--accent); }
+  .name { font-size: 2.3rem; font-weight: 800; margin-top: 6px; color: #fff; }
+  .role { font-size: 1.05rem; color: var(--ink); margin-top: 6px; }
+  .lede { font-family: var(--mono); font-size: 0.8rem; color: var(--dim); margin-top: 8px; }
+  .contacts { display: flex; flex-wrap: wrap; gap: 8px 14px; margin-top: 12px; font-family: var(--mono); font-size: 0.75rem; color: var(--dim); }
+  section { padding-block: 18px; break-inside: avoid; }
+  .sec-head { display: flex; align-items: baseline; gap: 12px; margin-bottom: 12px; border-bottom: 1px solid var(--line); padding-bottom: 5px; }
+  .sec-head .n { font-family: var(--mono); font-size: 0.74rem; color: var(--accent); }
+  .sec-head h2 { font-size: 1.25rem; font-weight: 700; color: #fff; }
+  .works { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .work { padding: 14px 16px; border-radius: 10px; background: var(--surface); border: 1px solid var(--line); display: block; color: inherit; break-inside: avoid; }
+  .work .tag { font-family: var(--mono); font-size: 0.66rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); }
+  .work h3 { font-size: 1rem; margin: 4px 0 6px; color: #fff; }
+  .work p { font-size: 0.82rem; color: var(--dim); }
+  .work .url { font-family: var(--mono); font-size: 0.71rem; color: var(--sec); margin-top: 8px; }
+  .why { padding: 16px 18px; border-radius: 10px; background: var(--surface); border: 1px solid var(--line); font-size: 0.88rem; line-height: 1.75; }
+  footer { margin-top: 14px; padding: 14px 0 24px; border-top: 1px solid var(--line); font-family: var(--mono); font-size: 0.72rem; color: var(--faint); line-height: 1.8; }
+  @page { size: A4; margin: 10mm 11mm; }
+</style>
+</head>
+<body>
+<div class="band">
+  <div class="page">
+    <p class="kicker">ENGINEERING &amp; ARCHITECTURE PORTFOLIO · TIER IV (ティアフォー · Autoware)</p>
+    <h1 class="name">Péter József Lódri</h1>
+    <p class="role">Senior Rust Systems &amp; Real-Time Edge GPU Engineer (Autoware Autonomous Driving OS) — Deterministic sub-millisecond Rust &amp; C pipelines for real-time spatial perception at the edge.</p>
+    <p class="lede">Printable mirror of <a href="https://tier4.vaked.dev">https://tier4.vaked.dev</a> · LinkedIn: <a href="https://www.linkedin.com/in/peter-lodri/">linkedin.com/in/peter-lodri</a></p>
+    <nav class="contacts">
+      <a href="mailto:peter.lodri@gmail.com">peter.lodri@gmail.com</a> ·
+      <a href="https://www.linkedin.com/in/peter-lodri/">LinkedIn</a> ·
+      <a href="https://github.com/peterlodri-sec">github.com/peterlodri-sec</a> ·
+      <a href="https://github.com/8b-is">github.com/8b-is</a> ·
+      <a href="https://tier4.vaked.dev">tier4.vaked.dev</a>
+    </nav>
+  </div>
+</div>
+
+<div class="page">
+  <main>
+    <section id="works">
+      <div class="sec-head"><span class="n">01</span><h2>Selected Architecture &amp; Engineering Works for TIER IV (ティアフォー · Autoware)</h2></div>
+      <div class="works">
+        
+        <a class="work" href="https://github.com/simplifaisoul/osiris">
+          <span class="tag">OSS Architect · Real-Time 3D Spatial Telemetry</span>
+          <h3>Osiris (simplifaisoul/osiris)</h3>
+          <p>Core Architect on Osiris — real-time 3D geospatial and multi-sensor intelligence dashboard built for high-frequency streaming telemetry.</p>
+          <div class="url">github.com/simplifaisoul/osiris</div>
+        </a>
+
+        <a class="work" href="https://github.com/peterlodri-sec">
+          <span class="tag">C / Rust · Zero-Allocation Deterministic Codec</span>
+          <h3>pureQTern &amp; project-zero</h3>
+          <p>Memory-safe Rust and zero-dependency C inference runtime for 1.58-bit ternary models, eliminating heap jitter on constrained edge compute.</p>
+          <div class="url">github.com/peterlodri-sec · pureQTern</div>
+        </a>
+
+        <a class="work" href="https://github.com/8b-is">
+          <span class="tag">Edge GPU Quantization · 12.80× Memory Reduction</span>
+          <h3>8b-is / MLX-QUANT</h3>
+          <p>Low-bit ternary quantization and custom GPU kernels designed to fit high-parameter perception and planning models onto embedded automotive GPUs.</p>
+          <div class="url">github.com/8b-is · MLX-QUANT</div>
+        </a>
+
+        <a class="work" href="https://oscilloscope.vaked.dev">
+          <span class="tag">Real-Time Signal Processing · 60fps WebGL2</span>
+          <h3>lissajoverse &amp; enthea</h3>
+          <p>Sub-millisecond phase/frequency signal processing and deterministic 60fps shader pipelines.</p>
+          <div class="url">oscilloscope.vaked.dev · viz.vaked.dev</div>
+        </a>
+
+        <a class="work" href="https://github.com/peterlodri-sec">
+          <span class="tag">Linux Kernel Internals · Embedded Android/C</span>
+          <h3>Kernel &amp; Embedded Security Tooling</h3>
+          <p>Production Linux kernel internals (kptr_restrict research, eBPF telemetry) and low-level C/Android instrumentation from Inpedio &amp; Cygnet.</p>
+          <div class="url">Linux Kernel · C · Rust · eBPF</div>
+        </a>
+
+        <a class="work" href="https://github.com/osaurus-ai/osaurus">
+          <span class="tag">OSS Architect · Local Autonomous Harness</span>
+          <h3>Osaurus &amp; Headroom (PR #1418)</h3>
+          <p>Core Architect on Osaurus (offline autonomous agent execution with cryptographic identity) and contributor to Headroom kompress routing.</p>
+          <div class="url">github.com/osaurus-ai/osaurus</div>
+        </a>
+      </div>
+    </section>
+
+    <section id="why">
+      <div class="sec-head"><span class="n">02</span><h2>Why TIER IV (ティアフォー · Autoware) (Shinagawa, Tokyo (品川インターシティ))</h2></div>
+      <div class="why">
+        <p>TIER IV's leadership of The Autoware Foundation proves that open-source, verifiable, safety-critical engineering is the only scalable path to autonomous mobility. In autonomous vehicles, heap jitter, memory bandwidth stalls, and opaque black-box pipelines cost lives. My career bridges low-level Linux kernel/C internals, memory-safe Rust, real-time 3D telemetry visualization (Osiris), and 12.80× compressed edge GPU inference (pureQTern / MLX-QUANT) — the exact toolkit needed to make Autoware faster, leaner, and provably deterministic.</p>
+        <p style="margin-top:10px" lang="ja">TIER IVが主導するオープンソース自動運転OS「Autoware」は、安全性と透明性が求められる自動運転社会のグローバルスタンダードです。組み込みLinuxカーネルやC/Rustの低レイヤー実装、リアルタイム3D空間テレメトリ基盤（Osiris）、そして車載エッジGPUのメモリ帯域制約を打破する1.58ビット量子化技術（pureQTern / MLX-QUANT）を融合させ、品川のTIER IVチームでAutowareのRust化とリアルタイム知覚パイプラインの進化に貢献したいと強く志望しています。</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div>Péter József Lódri · Live Interactive Site: <a href="https://tier4.vaked.dev">https://tier4.vaked.dev</a> · Master Hub: <a href="https://apply.vaked.dev">https://apply.vaked.dev</a></div>
+    <div>fine touch from within · peter + 8b.is &lt;3 · {−1, 0, +1} · om mani padme hum</div>
+  </footer>
+</div>
+</body>
+</html>

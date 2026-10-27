@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Péter József Lódri — Engineering Portfolio for Sakana AI (サカナAI)</title>
+<style>
+  :root {
+    color-scheme: dark;
+    --ink: #f2f4ff;
+    --dim: #c2c6e6;
+    --faint: #8f95bd;
+    --bg: #070a12;
+    --surface: #101524;
+    --line: rgba(255,255,255,0.14);
+    --accent: #ff6b4a;
+    --sec: #62e6c9;
+    --mono: ui-monospace, "SF Mono", Menlo, monospace;
+    --sans: "Inter", system-ui, -apple-system, "Hiragino Sans", sans-serif;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: var(--sans); font-size: 0.92rem; line-height: 1.6; color: var(--ink); background: var(--bg); -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  a { color: var(--sec); text-decoration: none; }
+  .page { max-width: 48rem; margin: 0 auto; padding: 0 clamp(16px, 4vw, 36px); }
+  .band { padding: 28px 0 22px; border-bottom: 1px solid var(--line); background: linear-gradient(135deg, rgba(255,255,255,0.05), transparent); }
+  .kicker { font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--accent); }
+  .name { font-size: 2.3rem; font-weight: 800; margin-top: 6px; color: #fff; }
+  .role { font-size: 1.05rem; color: var(--ink); margin-top: 6px; }
+  .lede { font-family: var(--mono); font-size: 0.8rem; color: var(--dim); margin-top: 8px; }
+  .contacts { display: flex; flex-wrap: wrap; gap: 8px 14px; margin-top: 12px; font-family: var(--mono); font-size: 0.75rem; color: var(--dim); }
+  section { padding-block: 18px; break-inside: avoid; }
+  .sec-head { display: flex; align-items: baseline; gap: 12px; margin-bottom: 12px; border-bottom: 1px solid var(--line); padding-bottom: 5px; }
+  .sec-head .n { font-family: var(--mono); font-size: 0.74rem; color: var(--accent); }
+  .sec-head h2 { font-size: 1.25rem; font-weight: 700; color: #fff; }
+  .works { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .work { padding: 14px 16px; border-radius: 10px; background: var(--surface); border: 1px solid var(--line); display: block; color: inherit; break-inside: avoid; }
+  .work .tag { font-family: var(--mono); font-size: 0.66rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); }
+  .work h3 { font-size: 1rem; margin: 4px 0 6px; color: #fff; }
+  .work p { font-size: 0.82rem; color: var(--dim); }
+  .work .url { font-family: var(--mono); font-size: 0.71rem; color: var(--sec); margin-top: 8px; }
+  .why { padding: 16px 18px; border-radius: 10px; background: var(--surface); border: 1px solid var(--line); font-size: 0.88rem; line-height: 1.75; }
+  footer { margin-top: 14px; padding: 14px 0 24px; border-top: 1px solid var(--line); font-family: var(--mono); font-size: 0.72rem; color: var(--faint); line-height: 1.8; }
+  @page { size: A4; margin: 10mm 11mm; }
+</style>
+</head>
+<body>
+<div class="band">
+  <div class="page">
+    <p class="kicker">ENGINEERING &amp; ARCHITECTURE PORTFOLIO · Sakana AI (サカナAI)</p>
+    <h1 class="name">Péter József Lódri</h1>
+    <p class="role">AI Systems &amp; Multi-GPU Infrastructure Engineer (Low-Bit Inference &amp; Agentic Swarms) — Nature-inspired collective intelligence meets 1.58-bit ternary hardware efficiency.</p>
+    <p class="lede">Printable mirror of <a href="https://sakana.vaked.dev">https://sakana.vaked.dev</a> · LinkedIn: <a href="https://www.linkedin.com/in/peter-lodri/">linkedin.com/in/peter-lodri</a></p>
+    <nav class="contacts">
+      <a href="mailto:peter.lodri@gmail.com">peter.lodri@gmail.com</a> ·
+      <a href="https://www.linkedin.com/in/peter-lodri/">LinkedIn</a> ·
+      <a href="https://github.com/peterlodri-sec">github.com/peterlodri-sec</a> ·
+      <a href="https://github.com/8b-is">github.com/8b-is</a> ·
+      <a href="https://sakana.vaked.dev">sakana.vaked.dev</a>
+    </nav>
+  </div>
+</div>
+
+<div class="page">
+  <main>
+    <section id="works">
+      <div class="sec-head"><span class="n">01</span><h2>Selected Architecture &amp; Engineering Works for Sakana AI (サカナAI)</h2></div>
+      <div class="works">
+        
+        <a class="work" href="https://github.com/8b-is">
+          <span class="tag">BitNet b1.58 · Metal GPU · 12.80× Compression</span>
+          <h3>MLX-QUANT &amp; pureQTern</h3>
+          <p>Ternary {-1, 0, +1} quantization engine and custom Metal GPU compute kernels achieving 12.80× memory reduction over FP16, paired with bit-exact C and Rust codecs.</p>
+          <div class="url">github.com/8b-is · MLX-QUANT &amp; pureQTern</div>
+        </a>
+
+        <a class="work" href="https://github.com/osaurus-ai/osaurus">
+          <span class="tag">OSS Architect · Native Agent Harness</span>
+          <h3>Osaurus (osaurus-ai/osaurus)</h3>
+          <p>Core Architect on the native Swift macOS harness for autonomous AI agents — persistent memory, local model execution, and cryptographic identity.</p>
+          <div class="url">github.com/osaurus-ai/osaurus</div>
+        </a>
+
+        <a class="work" href="https://github.com/headroomlabs-ai/headroom/pull/1418">
+          <span class="tag">OSS Contributor · Token Compression Router</span>
+          <h3>Headroom (PR #1418 — kompress Router)</h3>
+          <p>Engineered per-content-type bias multipliers for kompress domain routing in Headroom, optimizing multi-domain context compression.</p>
+          <div class="url">github.com/headroomlabs-ai/headroom/pull/1418</div>
+        </a>
+
+        <a class="work" href="https://github.com/peterlodri-sec">
+          <span class="tag">Composite Intelligence · Multi-Reasoner DAGs</span>
+          <h3>AgentField &amp; Automated Verification</h3>
+          <p>Multi-reasoner swarm orchestration with dynamic call graphs, async execution gates, and cryptographic Verifiable Credentials (VCs) per reasoning step.</p>
+          <div class="url">github.com/peterlodri-sec · AgentField</div>
+        </a>
+
+        <a class="work" href="https://github.com/simplifaisoul/osiris">
+          <span class="tag">OSS Architect · Real-Time Intelligence</span>
+          <h3>Osiris (simplifaisoul/osiris)</h3>
+          <p>Core Architect on Osiris — open-source real-time global intelligence and multi-source telemetry synthesis platform.</p>
+          <div class="url">github.com/simplifaisoul/osiris</div>
+        </a>
+
+        <a class="work" href="https://peterlodri-sec.github.io/hf-mac/">
+          <span class="tag">macOS · Swift 6 · Local Inference</span>
+          <h3>HF-Mac</h3>
+          <p>Native Swift 6 macOS companion for local and remote model discovery, quantization inspection, and zero-overhead local inference.</p>
+          <div class="url">peterlodri-sec.github.io/hf-mac</div>
+        </a>
+      </div>
+    </section>
+
+    <section id="why">
+      <div class="sec-head"><span class="n">02</span><h2>Why Sakana AI (サカナAI) (Minato-ku, Tokyo (港区・虎ノ門 / 赤坂))</h2></div>
+      <div class="why">
+        <p>Sakana AI proves that nature-inspired collective intelligence — evolutionary model merging, The AI Scientist, and composable swarms of efficient specialists — beats brute-force monolithic scaling. My work in 1.58-bit ternary quantization (MLX-QUANT, pureQTern), context compression routing (Headroom PR #1418), and autonomous agent harnesses (Osaurus, AgentField) is built on the exact same conviction: when you compress foundation weights by 12.80× into {-1, 0, +1} and orchestrate them as verifiable swarms, a single workstation or compact GPU cluster becomes an evolutionary laboratory.</p>
+        <p style="margin-top:10px" lang="ja">Sakana AIが推進する「自然界の群知能に学ぶ進化的モデル統合」と「自律型AIサイエンティスト」は、巨大単一モデルの力任せなスケーリングに対する最も美しい解答です。私が開発してきた1.58ビット三値量子化エンジン（MLX-QUANT / pureQTern、FP16比12.80倍圧縮）やマルチエージェント基盤（Osaurus / AgentField / Headroom PR #1418）は、まさに限られた計算資源から最大の創発的知能を引き出すためのシステム技術であり、東京のSakana AIチームでその推論・分散基盤を極限まで高速化したいと強く願っています。</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div>Péter József Lódri · Live Interactive Site: <a href="https://sakana.vaked.dev">https://sakana.vaked.dev</a> · Master Hub: <a href="https://apply.vaked.dev">https://apply.vaked.dev</a></div>
+    <div>fine touch from within · peter + 8b.is &lt;3 · {−1, 0, +1} · om mani padme hum</div>
+  </footer>
+</div>
+</body>
+</html>
