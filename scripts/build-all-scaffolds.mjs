@@ -288,7 +288,7 @@ writeFileSync(
 );
 writeFileSync(
   join(hubDeployDir, "worker.js"),
-  `const HTML = ${JSON.stringify(masterIndexHtml)};\nexport default {\n  async fetch(req) {\n    const url = new URL(req.url);\n    if (url.pathname === "/health") return new Response("OK");\n    return new Response(HTML, { headers: { "content-type": "text/html; charset=utf-8" } });\n  }\n};\n`
+  `const HTML = ${JSON.stringify(masterIndexHtml)};\nconst SITES = new Set(["pfn", "sakana", "taiko", "teamlab", "tier4", "woven"]);\nexport default {\n  async fetch(req) {\n    const url = new URL(req.url);\n    const path = url.pathname.replace(/\\/+$/, "") || "/";\n    if (path === "/health") return new Response("OK");\n    const seg = path.split("/").filter(Boolean);\n    if (seg.length > 1 && SITES.has(seg[0])) {\n      const rest = seg.slice(1).join("/");\n      return Response.redirect(\`https://\${seg[0]}.vaked.dev/\${rest}\${url.search}\`, 302);\n    }\n    return new Response(HTML, { headers: { "content-type": "text/html; charset=utf-8" } });\n  }\n};\n`
 );
 
 console.log("All 6 E2E company scaffolds + Master Hub generated and rendered to PDF!");
